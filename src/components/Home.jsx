@@ -45,10 +45,10 @@ const Home = () => {
   });
 
   return (
-    <section className="h-screen bg-purple-500 text-white flex flex-col items-center justify-center text-center">
+    <section className="h-screen bg-black-500 text-primary flex flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-bold mb-4">Student Hack 2025</h1>
       <p className="text-xl mb-6">Countdown: {timerComponents.length ? timerComponents : <span>Time's up!</span>}</p>
-      <button className="bg-white text-black-500 py-2 px-6 rounded-full hover:bg-blue-100 transition">
+      <button className="bg-secondary text-tertiary py-2 px-6 rounded-full hover:bg-blue-100 transition">
         Apply Now
       </button>
     </section>
