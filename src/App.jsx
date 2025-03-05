@@ -33,9 +33,7 @@ const App = () => {
   const options = useMemo(
     () => ({
       background: {
-        color: {
-          value: "#00000",
-        },
+        opacity: 0.5,
       },
       fpsLimit: 120,
       particles: {
@@ -89,18 +87,18 @@ const App = () => {
 
 
   return (
-    <div class="container" className="text-gray-900">
+    <div class="container" className="text-gray-900 back">
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
       <Home />
       <AboutUs />
       <Schedule />
       <Sponsors />
       <FAQ />
       <OurTeam />
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
     </div>
   );
 };

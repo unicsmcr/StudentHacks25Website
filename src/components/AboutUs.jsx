@@ -265,6 +265,7 @@ const AboutUs = () => {
   return (
     <section 
       ref={containerRef}
+      
       className="py-20 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex items-center"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
