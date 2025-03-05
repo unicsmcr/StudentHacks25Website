@@ -47,7 +47,8 @@ const Home = () => {
   return (
     <section className="h-screen bg-black-500 text-primary flex flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-bold mb-4">Student Hack 2025</h1>
-      <p className="text-xl mb-6">Countdown: {timerComponents.length ? timerComponents : <span>Time's up!</span>}</p>
+      <p className="text-xl mb-2">ETA: {timerComponents.length ? timerComponents : <span>Time's up!</span>}</p>
+      <p className="text-lg mb-6">Location: Nancy Rothwell</p>
       <button className="bg-secondary text-tertiary py-2 px-6 rounded-full hover:bg-blue-100 transition">
         Apply Now
       </button>
