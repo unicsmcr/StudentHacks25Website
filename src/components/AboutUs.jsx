@@ -224,7 +224,7 @@ const AboutUs = () => {
 
   const glitchConstant = useGlitch({
     playMode: "always",
-    duration: 200,
+    duration: 3950,
   }); 
 
   // Handle click event
@@ -270,8 +270,8 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* About Us Text */}
         <div className="text-left">
-          <h2 className="text-5xl font-bold mb-6">About Us</h2>
-          <p className="text-lg leading-relaxed opacity-80">
+          <h2 className="text-4xl font-bold mb-6" ref={glitchConstant.ref}>About Us</h2>
+          <p className="text-lg text-gray-100 leading-relaxed opacity-80">
             We are UniCS, the Computer Science Society at the esteemed University of Manchester.
             Our mission is to foster unity among students through a diverse array of student-led events,
             with our hackathons standing out as our flagship offerings, widely celebrated within our community.
