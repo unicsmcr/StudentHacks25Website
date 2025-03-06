@@ -8,6 +8,8 @@ import OurTeam from "./components/OurTeam";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useMemo, useState } from "react";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -43,7 +45,7 @@ const App = () => {
         links: {
           color: "#ffffff",
           distance: 150,
-          enable: false,
+          enable: true,
           opacity: 0.5,
           width: 1,
         },

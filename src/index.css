@@ -15,7 +15,7 @@ body {
 }
 
 .back {
-  background: linear-gradient(135deg, #000000 0%, #303030 50%, #000000 100%);
+  background: linear-gradient(135deg, #000000 0%, #212121 50%, #000000 100%);
   z-index: 1;
   position: relative; /* So child elements can be positioned relative to it */
   width: 100vw;
