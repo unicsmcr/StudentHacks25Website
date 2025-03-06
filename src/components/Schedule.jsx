@@ -127,7 +127,7 @@ const Schedule = () => {
   };
 
   return (
-    <section className="py-16 px-8 bg-black-900">
+    <section id="Schedule" className="py-16 px-8 bg-black-900">
       <div className="max-w-7xl mx-auto">
         {/* Title box */}
         <div className="text-center mb-12">

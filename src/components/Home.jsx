@@ -29,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-screen text-gray-100 flex flex-col items-center justify-center text-center">
+    <section id="Home" className="h-screen text-gray-100 flex flex-col items-center justify-center text-center">
       <h1 className="font-title text-4xl text-primary font-bold mb-6">Student Hack 2025</h1>
       <p className="text-lg mb-4">Location: Nancy Rothwell</p>
 

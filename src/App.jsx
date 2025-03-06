@@ -71,7 +71,7 @@ const App = () => {
           value: 0.5,
         },
         shape: {
-          type: "square",
+          type: "square"
         },
         size: {
           value: { min: 1, max: 10 },

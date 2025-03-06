@@ -262,6 +262,7 @@ const AboutUs = () => {
   return (
     <section 
       ref={containerRef}
+      id="AboutUs"
       className="pt-20 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center"
     >
       <div className="max-w-7xl mx-auto w-full space-y-12">
