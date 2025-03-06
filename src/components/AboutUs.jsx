@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, use } from "react";
 import { useGlitch } from 'react-powerglitch'
+import Slider from "react-slick";
+
 const events = [
   {
     id: 1,
@@ -213,7 +215,6 @@ const events = [
   }
 ];
 
-
 const AboutUs = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const containerRef = useRef(null);
@@ -227,36 +228,32 @@ const AboutUs = () => {
     duration: 3950,
   }); 
 
+  var settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   // Handle click event
   const handleEventClick = (event) => {
-    // If the clicked event is already selected, deselect it
     setSelectedEvent(prevEvent => prevEvent?.id === event.id ? null : event);
   };
 
   // Effect to handle clicks outside of the current button
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Check if an event is selected
       if (selectedEvent) {
-        // Find all event buttons in the container
         const eventButtons = containerRef.current.querySelectorAll('.event-button');
-        
-        // Check if the click is not on any event button
         const isClickOnEventButton = Array.from(eventButtons).some(button => 
           button.contains(event.target)
         );
-
-        // Deselect if the click is not on any event button
         if (!isClickOnEventButton) {
           setSelectedEvent(null);
         }
       }
     };
-
-    // Add event listener to document
     document.addEventListener('mousedown', handleClickOutside);
-
-    // Cleanup the event listener
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -265,61 +262,86 @@ const AboutUs = () => {
   return (
     <section 
       ref={containerRef}
-      
-      className="py-20 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex items-center"
+      id="AboutUs"
+      className="pt-20 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center"
     >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* About Us Text */}
-        <div className="text-left">
-          <h2 className="text-4xl font-bold mb-6" ref={glitchConstant.ref}>About Us</h2>
-          <p className="text-lg text-gray-100 leading-relaxed opacity-80">
+      <div className="max-w-7xl mx-auto w-full space-y-12">
+        {/* About Us Section */}
+        <div className="text-center">
+          <h2 
+            className="text-5xl font-bold mb-6 font-title" 
+            ref={glitchConstant.ref}
+          >
+            About Us
+          </h2>
+          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
             We are UniCS, the Computer Science Society at the esteemed University of Manchester.
             Our mission is to foster unity among students through a diverse array of student-led events,
             with our hackathons standing out as our flagship offerings, widely celebrated within our community.
           </p>
         </div>
-
-        {/* Event Buttons and Info Boxes */}
-        <div className="relative">
-          {/* Grid of Buttons */}
-          <div className="grid grid-cols-4 gap-2 relative">
+  
+        {/* Images Section */}
+        <div className="slider-container w-1/2 align-middle mx-auto">
+        <Slider {...settings}>
+          {/* add 3 placeholder images using lorem picsum */}
+          <div>
+            <img src="https://picsum.photos/seed/1/2000/1000"
+            alt="placeholder" />
+          </div>
+          <div>
+            <img src="https://picsum.photos/seed/2/2000/1000"
+            alt="placeholder" />
+          </div>
+          <div>
+            <img src="https://picsum.photos/seed/3/2000/1000"
+            alt="placeholder" />
+          </div>
+        </Slider>
+        </div>
+  
+        {/* Past Events Section */}
+        <div className="w-full">
+          <p className="text-accent2 text-3xl mb-9 text-center font-title">View Past Events</p>
+          <div className="flex flex-wrap gap-4 justify-center">
             {events.map((event) => (
-              <div
-                key={event.id}
-                className="relative"
-              >
-                {/* Regular Button (Cube) */}
+              <div key={event.id} className="relative text-center">
                 <button
-                  className={`w-full bg-transparent text-tertiary rounded-md flex items-center justify-center relative overflow-hidden hover:shadow-2xl glitcheffect event-button`}
-                  style={{ height: "100px", outline: "none", border: "none" }}
+                  className={`w-full bg-transparent rounded-md flex items-center justify-center relative overflow-hidden hover:shadow-2xl glitcheffect event-button`}
+                  style={{ height: "80px", width: "120px", outline: "none", border: "none" }}
                   ref={glitch.ref}
                   onClick={() => handleEventClick(event)}
                 >
                   <div className="w-full h-5/6 bg-transparent flex items-center justify-center">
-                    <div className="w-3/4 h-3/4 bg-secondary "></div>
+                    <div className="w-4/4 h-4/4 bg-secondary"></div>
                   </div>
                 </button>
-
-                <p className="mt-2 text-sm font-semibold text-gray-300 align-middle text-center">
+                <p className="w-full text-lg font-semibold font-title text-gray-300 mt-2">
                   {event.name}
                 </p>
-
-                {/* Popup for Event Details */}
                 {selectedEvent && selectedEvent.id === event.id && (
-                  <div>
+                  <div className="mt-2 absolute place-items-center w-full flex-col z-50 shadow-xl">
                     <div 
-                      className="absolute z-10 left-0 right-0 mt-2 bg-gray-800 shadow-xxl rounded-md p-3 overflow-hidden"
+                      className="w-0 h-0"
+                      style={{ 
+                        borderLeft: "8px solid transparent",
+                        borderRight: "8px solid transparent",
+                        borderBottom: "8px solid #000000",
+                      }}
+                    ></div>
+                    <div 
+                      className="bg-neutral-900 shadow-xxl rounded-md"
                       style={{ 
                         top: "100%", 
-                        width: "100%",
-                        animation: "fadeIn 0.3s ease-out forwards"
+                        width: "180px",
+                        animation: "fadeIn 0.3s ease-out forwards",
                       }}
                     >
                       {selectedEvent.events?.map((subEvent) => (
-                        <p key={subEvent.id} className="text-xs text-gray-300 mb-1 text-center">
+                        <p key={subEvent.id} className="text-s text-gray-300 p-2 text-center">
                           {subEvent.name}
                           <br />
-                          <span className="text-[10px]">{subEvent.attendees} attendees</span>
+                          <span className="text-xs">{subEvent.attendees} attendees</span>
                         </p>
                       ))}
                     </div>
@@ -330,33 +352,8 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
-      {/* Adding a small keyframe animation for smooth fade-in */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeOut {
-          from {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-        }
-      `}</style>
     </section>
   );
-};
+}
 
 export default AboutUs;

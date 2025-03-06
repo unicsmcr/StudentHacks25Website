@@ -4,10 +4,13 @@ import AboutUs from "./components/AboutUs";
 import Schedule from "./components/Schedule";
 import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
+import Navbar from "./components/Navbar";
 import OurTeam from "./components/OurTeam";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useMemo, useState } from "react";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -43,7 +46,7 @@ const App = () => {
         links: {
           color: "#ffffff",
           distance: 150,
-          enable: false,
+          enable: true,
           opacity: 0.5,
           width: 1,
         },
@@ -68,7 +71,7 @@ const App = () => {
           value: 0.5,
         },
         shape: {
-          type: "square",
+          type: "square"
         },
         size: {
           value: { min: 1, max: 10 },
@@ -88,6 +91,7 @@ const App = () => {
 
   return (
     <div class="container" className="text-gray-900 back">
+      <Navbar />
       <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
