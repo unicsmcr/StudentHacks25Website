@@ -4,7 +4,7 @@ import { MdMail } from "react-icons/md";
 
 const Home = () => {
   const calculateTimeLeft = () => {
-    const eventDate = new Date("April 5, 2025 09:00:00").getTime();
+    const eventDate = new Date("March 6, 2025 11:28:00").getTime();
     const currentTime = new Date().getTime();
     const difference = eventDate - currentTime;
 
@@ -15,6 +15,13 @@ const Home = () => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
+    } else {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
     }
     return null;
   };
@@ -32,26 +39,29 @@ const Home = () => {
     <section id="Home" className="h-screen text-gray-100 flex flex-col items-center justify-center text-center">
       <h1 className="font-title text-4xl text-primary font-bold mb-6">Student Hack 2025</h1>
       <p className="text-lg mb-4">Location: Nancy Rothwell</p>
+ 
+      <div className="flex gap-4 text-center text-xl">
+        {Object.entries(timeLeft).map(([unit, value]) => (
+          <div
+            key={unit}
+            className="px-6 py-3 rounded-lg shadow-lg outline-2 outline-primary backdrop-blur-sm"
+            
+          >
+            <span className="block text-4xl font-bold">{value}</span>
+            <span className="text-sm uppercase">{unit}</span>
+          </div>
+        ))}
+      </div>
 
-      {timeLeft ? (
-        <div className="flex gap-4 text-center text-xl">
-          {Object.entries(timeLeft).map(([unit, value]) => (
-            <div
-              key={unit}
-              className="bg-gray-800 px-6 py-3 rounded-lg shadow-lg border border-gray-700"
-            >
-              <span className="block text-4xl font-bold">{value}</span>
-              <span className="text-sm uppercase">{unit}</span>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="text-2xl font-bold text-red-500">Time's up!</p>
-      )}
-
-      <button className="mt-6 bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-500 transition duration-300">
-        Apply Now
-      </button>
+    <div 
+      className="mt-6 bg-black backdrop-blur-sm outline-2 outline-primary text-accent2 py-2 px-6 rounded-full hover:bg-neutral-900 transition duration-300 inline-block"
+      onClick={() => console.log('Apply Now clicked')}
+      role="button"
+      tabIndex="-1"
+      style={{ }}
+    >
+      Apply Now
+    </div>
 
       <div className="flex gap-4 mt-6">
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
