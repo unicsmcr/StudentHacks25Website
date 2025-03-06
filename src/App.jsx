@@ -4,6 +4,7 @@ import AboutUs from "./components/AboutUs";
 import Schedule from "./components/Schedule";
 import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
+import Navbar from "./components/Navbar";
 import OurTeam from "./components/OurTeam";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -90,6 +91,7 @@ const App = () => {
 
   return (
     <div class="container" className="text-gray-900 back">
+      <Navbar />
       <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
