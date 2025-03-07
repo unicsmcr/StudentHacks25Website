@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef, use } from "react";
-import { useGlitch } from 'react-powerglitch'
+import React, { useState, useEffect, useRef } from "react";
+import { useGlitch } from 'react-powerglitch';
 import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const events = [
   {
@@ -215,6 +217,7 @@ const events = [
   }
 ];
 
+
 const AboutUs = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const containerRef = useRef(null);
@@ -228,19 +231,39 @@ const AboutUs = () => {
     duration: 3950,
   }); 
 
+  const images = [
+    "https://picsum.photos/seed/1/2000/1000",
+    "https://picsum.photos/seed/2/2000/1000",
+    "https://picsum.photos/seed/3/2000/1000"
+  ];
+
   var settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
-  // Handle click event
   const handleEventClick = (event) => {
     setSelectedEvent(prevEvent => prevEvent?.id === event.id ? null : event);
   };
 
-  // Effect to handle clicks outside of the current button
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (selectedEvent) {
@@ -282,22 +305,14 @@ const AboutUs = () => {
         </div>
   
         {/* Images Section */}
-        <div className="slider-container w-1/2 align-middle mx-auto">
-        <Slider {...settings}>
-          {/* add 3 placeholder images using lorem picsum */}
-          <div>
-            <img src="https://picsum.photos/seed/1/2000/1000"
-            alt="placeholder" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/seed/2/2000/1000"
-            alt="placeholder" />
-          </div>
-          <div>
-            <img src="https://picsum.photos/seed/3/2000/1000"
-            alt="placeholder" />
-          </div>
-        </Slider>
+        <div className="slider-container w-full md:w-3/4 lg:w-1/2 align-middle mx-auto">
+          <Slider {...settings}>
+            {images.map((src, index) => (
+              <div key={index}>
+                <img src={src} alt={`placeholder ${index + 1}`} className="cursor-pointer w-full h-auto rounded-lg" />
+              </div>
+            ))}
+          </Slider>
         </div>
   
         {/* Past Events Section */}

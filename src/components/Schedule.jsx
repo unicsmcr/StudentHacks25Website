@@ -52,34 +52,11 @@ const scheduleData = {
 
 const Schedule = () => {
   const glitchConstant = useGlitch({
-      playMode: "always",
-      duration: 3950,
-    }); 
+    playMode: "always",
+    duration: 3950,
+  });
 
-
-    // const generateGradient = (events) => {
-    //   const totalEvents = events.length;
-    //   const colors = {
-    //     completed: "gray",
-    //     ongoing: "green",
-    //     upcoming: "lightgray",
-    //     cancelled: "red"
-    //   };
-    
-    //   const gradientStops = events
-    //     .map((event, index) => {
-    //       const percentage = (index / totalEvents) * 100;
-    //       const color = colors[event.status] || colors.upcoming;
-    //       return `${color} ${percentage}%`;
-    //     })
-    //     .join(", ");
-    
-    //   return `linear-gradient(to bottom, ${gradientStops})`;
-    // };
-
-  // Function to get status styles
   const getStatusStyles = (status) => {
-    // Default to "upcoming" if no status is provided
     const eventStatus = status || "upcoming";
     
     switch(eventStatus) {
@@ -93,7 +70,6 @@ const Schedule = () => {
           progressBg: "bg-green-500 bg-opacity-20"
         };
       case "completed":
-      case "old": // Handle the "old" status similarly to "completed"
         return {
           markerClass: "bg-gray-500",
           borderClass: "border-gray-500",
@@ -140,11 +116,11 @@ const Schedule = () => {
         <div className="flex justify-center gap-4 mb-8 flex-wrap">
           <div className="flex items-center">
             <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-            <span className="text-gray-200">Live Now</span>
+            <span className="text-gray-100">Live Now</span>
           </div>
           <div className="flex items-center">
-            <div className="w-3 h-3 bg-gray-300 rounded-full mr-2"></div>
-            <span className="text-gray-200">Upcoming</span>
+            <div className="w-3 h-3 bg-gray-100 rounded-full mr-2"></div>
+            <span className="text-gray-100">Upcoming</span>
           </div>
           <div className="flex items-center">
             <div className="w-3 h-3 bg-gray-500 rounded-full mr-2"></div>
@@ -159,9 +135,9 @@ const Schedule = () => {
         {/* Schedule Timeline */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {scheduleData.days.map((day) => (
-            <div key={day.date} className="shadow-2xl overflow-hidden rounded-2xl"
+            <div key={day.date} className="shadow-2xl overflow-hidden rounded-2xl opacity-90 font-semibold outline-2 outline-primary"
             style={{background: "linear-gradient(to bottom, #171717 20%, #212121 40%, #171717)"}}>
-              <div className="text-center bg-[#171717] border-black py-4">
+              <div className="text-center bg-[#171717] py-4">
                 <h2 className="text-3xl text-accent2 font-title">{day.date}</h2>
                 <h3 className="text-xl mt-2 text-gray-200 font-title">{day.dayOfWeek}</h3>
               </div>
@@ -174,16 +150,16 @@ const Schedule = () => {
                     return (
                       <div 
                         key={index} 
-                        className={` relative border-l-4 ${statusStyles.borderClass} pl-4 pb-8`}
+                        className={`relative border-l-4 ${statusStyles.borderClass} pl-4 pb-8`}
                       >
                         {/* Time marker */}
                         <div className={`absolute left-[-10px] top-1 w-4 h-4 ${statusStyles.markerClass} rounded-full z-10`}></div>
 
                         {/* Event details */}
-                        <div className="flex justify-between items-start">
-                          <span className={`font-semibold absolute ${statusStyles.timeClass} mr-4 text-lg min-w-16`}>{event.time}</span>
-                          <div className="text-right flex-grow text-lg">
-                            <div className="flex justify-end items-center gap-2">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                          <span className={`font-semibold ${statusStyles.timeClass} mr-4 text-lg min-w-16`}>{event.time}</span>
+                          <div className="text-left md:text-right flex-grow text-lg mt-2 md:mt-0">
+                            <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-2">
                               <span className={statusStyles.titleClass}>{event.title}</span>
                               {event.status === "cancelled" && (
                                 <span className={`text-xs px-2 py-1 rounded ${statusStyles.badgeClass}`}>
@@ -192,7 +168,7 @@ const Schedule = () => {
                               )}
                             </div>
                             {event.description && (
-                              <p className={`text-base opacity-80 mt-4 ${statusStyles.timeClass}`}>{event.description}</p>
+                              <p className={`text-base opacity-80 mt-2 md:mt-4 ${statusStyles.timeClass}`}>{event.description}</p>
                             )}
                           </div>
                         </div>

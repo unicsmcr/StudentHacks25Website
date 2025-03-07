@@ -64,7 +64,7 @@ const App = () => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 60,
           limit: 150
         },
         opacity: {
