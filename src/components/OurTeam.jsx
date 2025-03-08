@@ -1,36 +1,38 @@
+
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import ListSubheader from '@mui/material/ListSubheader';
+// import IconButton from '@mui/material/IconButton';
+// import InfoIcon from '@mui/icons-material/Info';
+
 const OurTeam = () => {
+    const members= [{"name": "Sean bechofer", "image": "https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg", "role": "Lead dev", "linkedin": "", "github":""}, {"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""},{"name": "Shrey Patel", "image": "https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=", "role": "dev", "linkedin": "", "github":""}];
     return (
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Team Member 1"
-                className="w-32 h-32 mx-auto rounded-full mb-4"
-              />
-              <p className="font-semibold">John Doe</p>
-              <p>Lead Developer</p>
-            </div>
-            <div>
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Team Member 2"
-                className="w-32 h-32 mx-auto rounded-full mb-4"
-              />
-              <p className="font-semibold">Jane Smith</p>
-              <p>Designer</p>
-            </div>
-            <div>
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Team Member 3"
-                className="w-32 h-32 mx-auto rounded-full mb-4"
-              />
-              <p className="font-semibold">Chris Lee</p>
-              <p>Project Manager</p>
-            </div>
+          <div className="flex flex-col items-center justify-center">
+          <ImageList sx={{ width: 800}}>
+      <ImageListItem key="Subheader" cols={2}>
+        <ListSubheader component="div">December</ListSubheader>
+      </ImageListItem>
+          {members.map((member, index) => ( 
+
+<ImageListItem key={index}>
+<img
+  src={member.image}
+  loading="lazy"
+/>
+<ImageListItemBar
+  title={member.name}
+  subtitle={member.role}
+/>
+</ImageListItem>
+
+
+            ))}
+           </ImageList>
           </div>
         </div>
       </section>
