@@ -67,7 +67,7 @@ const Sponsors = () => {
       description: "Network Protection Arrays",
       color: "from-gray-300 to-gray-400",
       shape: "triangle",
-      logo: "/public/images/net.png",
+      logo: "/public/images/net.png", // this logo is a place holder, and not a real sponsor
       link: "#"
     }
   ];
@@ -122,22 +122,16 @@ const Sponsors = () => {
       );
     }
 
+    // may add a scaning feature later here for svg logos, remove this if I have chosen to be lazy 
+    
     if (sponsor.logo && sponsor.logo.ensdWith(".svg")) {
       return (
-        <div className="w-6 h-6 flex items-center justify-center mr-3 relative overflow-hidden">
-          <img 
-            src={sponsor.logo} 
-            alt={`${sponsor.name} logo`} 
-            className="w-full h-full object-contain relative z-10"
-          />
-          
-          {/* Auto-scanning line - will animate as soon as it appears */}
-          <div className="absolute left-0 top-0 right-0 h-[2px] bg-green-400/70 
-                        animate-scan"></div>
+        <div > 
         </div>
       );
     }
-    // fall back for logo disfunction 
+
+    // fall back for logo absence for the devolopment phase, may need to be romoved after that
     switch(sponsor.shape) {
       case 'circle':
         return (
