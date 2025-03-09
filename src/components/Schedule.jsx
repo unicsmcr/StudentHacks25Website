@@ -104,85 +104,97 @@ const Schedule = () => {
 
   return (
     <section id="Schedule" className="py-16 px-8 bg-black-900">
-      <div className="max-w-7xl mx-auto">
-        {/* Title box */}
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-primary font-title" ref={glitchConstant.ref}>Schedule</h2>
-          <br />
-          <p className="text-xl leading-relaxed text-gray-200">Our hackathons aren't just 24 hours of straight coding - there'll be many workshops, mini-games and events for everyone to have fun and learn!</p>
-        </div>
-        
-        {/* Legend */}
-        <div className="flex justify-center gap-4 mb-8 flex-wrap">
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-            <span className="text-gray-100">Live Now</span>
-          </div>
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-gray-100 rounded-full mr-2"></div>
-            <span className="text-gray-100">Upcoming</span>
-          </div>
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-gray-500 rounded-full mr-2"></div>
-            <span className="text-gray-200">Completed</span>
-          </div>
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-            <span className="text-gray-200">Cancelled</span>
-          </div>
-        </div>
+  <div className="max-w-7xl mx-auto">
+    {/* Title box */}
+    <div className="text-center mb-12">
+      <h2 className="text-5xl font-bold text-primary font-title" ref={glitchConstant.ref}>
+        Schedule
+      </h2>
+      <br />
+      <p className="text-xl leading-relaxed text-gray-200">
+        Our hackathons aren't just 24 hours of straight coding - there'll be many workshops, mini-games and events for everyone to have fun and learn!
+      </p>
+    </div>
 
-        {/* Schedule Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {scheduleData.days.map((day) => (
-            <div key={day.date} className="shadow-2xl overflow-hidden rounded-2xl opacity-90 font-semibold outline-2 outline-primary"
-            style={{background: "linear-gradient(to bottom, #171717 20%, #212121 40%, #171717)"}}>
-              <div className="text-center bg-[#171717] py-4">
-                <h2 className="text-3xl text-accent2 font-title">{day.date}</h2>
-                <h3 className="text-xl mt-2 text-gray-200 font-title">{day.dayOfWeek}</h3>
-              </div>
-
-              <div className="p-4">
-                <div className="relative">
-                  {day.events.map((event, index) => {
-                    const statusStyles = getStatusStyles(event.status);
-
-                    return (
-                      <div 
-                        key={index} 
-                        className={`relative border-l-4 ${statusStyles.borderClass} pl-4 pb-8`}
-                      >
-                        {/* Time marker */}
-                        <div className={`absolute left-[-10px] top-1 w-4 h-4 ${statusStyles.markerClass} rounded-full z-10`}></div>
-
-                        {/* Event details */}
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                          <span className={`font-semibold ${statusStyles.timeClass} mr-4 text-lg min-w-16`}>{event.time}</span>
-                          <div className="text-left md:text-right flex-grow text-lg mt-2 md:mt-0">
-                            <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-2">
-                              <span className={statusStyles.titleClass}>{event.title}</span>
-                              {event.status === "cancelled" && (
-                                <span className={`text-xs px-2 py-1 rounded ${statusStyles.badgeClass}`}>
-                                  {statusStyles.badgeText}
-                                </span>
-                              )}
-                            </div>
-                            {event.description && (
-                              <p className={`text-base opacity-80 mt-2 md:mt-4 ${statusStyles.timeClass}`}>{event.description}</p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-              </div>
-            </div>
-          ))}
-        </div>
+    {/* Legend */}
+    <div className="flex justify-center gap-4 mb-8 flex-wrap">
+      <div className="flex items-center">
+        <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+        <span className="text-gray-100">Live Now</span>
       </div>
-    </section>
+      <div className="flex items-center">
+        <div className="w-3 h-3 bg-gray-100 rounded-full mr-2"></div>
+        <span className="text-gray-100">Upcoming</span>
+      </div>
+      <div className="flex items-center">
+        <div className="w-3 h-3 bg-gray-500 rounded-full mr-2"></div>
+        <span className="text-gray-200">Completed</span>
+      </div>
+      <div className="flex items-center">
+        <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+        <span className="text-gray-200">Cancelled</span>
+      </div>
+    </div>
+
+    {/* Schedule Timeline */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {scheduleData.days.map((day, index) => (
+        <div
+          key={day.date}
+          className="shadow-2xl overflow-hidden rounded-md outline-primary"
+          style={{
+            background: `linear-gradient(${
+              window.innerWidth < 768 && index === 1 ? "0deg" : "180deg"
+            }, rgba(0, 0, 0, 0.6), rgba(7, 22, 33, 0.6) 30%, rgba(21, 74, 112, 0.6))`,
+          }}
+        >
+          <div className="text-center py-4 ">
+            <h2 className="text-3xl text-accent2 font-title">{day.date}</h2>
+            <h3 className="text-xl mt-2 text-gray-200 font-title">{day.dayOfWeek}</h3>
+          </div>
+
+          <div className="p-4">
+            <div className="relative">
+              {day.events.map((event, eventIndex) => {
+                const statusStyles = getStatusStyles(event.status);
+
+                return (
+                  <div key={eventIndex} className={`relative border-l-4 ${statusStyles.borderClass} pl-4 pb-8`}>
+                    {/* Time marker */}
+                    <div className={`absolute left-[-10px] top-1 w-4 h-4 ${statusStyles.markerClass} rounded-full z-10`}></div>
+
+                    {/* Event details */}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                      <span className={`font-semibold ${statusStyles.timeClass} mr-4 text-lg min-w-16`}>
+                        {event.time}
+                      </span>
+                      <div className="text-left md:text-right flex-grow text-lg mt-2 md:mt-0">
+                        <div className="flex flex-col md:flex-row justify-end items-start md:items-center gap-2">
+                          <span className={statusStyles.titleClass}>{event.title}</span>
+                          {event.status === "cancelled" && (
+                            <span className={`text-xs px-2 py-1 rounded ${statusStyles.badgeClass}`}>
+                              {statusStyles.badgeText}
+                            </span>
+                          )}
+                        </div>
+                        {event.description && (
+                          <p className={`text-base opacity-80 mt-2 md:mt-4 ${statusStyles.timeClass}`}>
+                            {event.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 

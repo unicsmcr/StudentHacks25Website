@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <button 
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-50 p-2 rounded-md bg-transparent backdrop-blur-3xl outline-primary outline-2 md:hidden"
+        className="fixed top-4 right-4 z-50 p-2 rounded-md bg-transparent backdrop-blur-3xl outline-secondary outline-2 md:hidden"
         aria-label="Toggle menu"
       >
         {isMenuOpen ? (
@@ -39,7 +39,7 @@ const Navbar = () => {
       )}
 
       <nav className="fixed top-0 left-0 right-0 mt-12 z-30 hidden md:flex justify-center text-sm">
-        <div className="bg-transparent backdrop-blur-3xl outline-primary outline-2 py-4 px-3 rounded-2xl">
+        <div className="bg-transparent backdrop-blur-3xl outline-secondary outline-2 py-4 px-3 rounded-2xl">
           <ul className="flex space-x-2 font-title font-bold shadow-2xl">
             <li><a href="#Home" className="text-accent2 hover:text-accent2dark p-2">Apply</a></li>
             <li><a href="#AboutUs" className="mr-3 text-gray-100 hover:text-gray-400">About</a></li>

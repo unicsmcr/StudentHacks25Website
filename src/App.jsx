@@ -41,10 +41,10 @@ const App = () => {
       fpsLimit: 120,
       particles: {
         color: {
-          value: "#696969",
+          value: "#5ec2e6",
         },
         links: {
-          color: "#ffffff",
+          color: "#5ec2e6",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -74,7 +74,7 @@ const App = () => {
           type: "square"
         },
         size: {
-          value: { min: 1, max: 10 },
+          value: { min: 1, max: 5 },
         },
         rotate: {
           value: { min: 0, max: 360 },
@@ -108,3 +108,5 @@ const App = () => {
 };
 
 export default App;
+
+
