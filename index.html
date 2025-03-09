@@ -19,13 +19,24 @@
           },
           extend: {
             colors: {
-              primary: "#55f29d", 
-              secondary: "#EF2951",
-              tertiary: "#FBE10A",
-              accent: "#22F3CF",
-              accent2: "#DCFD95",
-              accent2dark: "#A3E91C",
-              accent3: "#A3E91C"
+              primary: {
+                DEFAULT: "#5dcae6",
+                50: "rgba(93,202,230,0.05)", // 5% opacity
+                100: "rgba(93,202,230,0.1)", // 10% opacity
+                200: "rgba(93,202,230,0.2)", // 20% opacity
+                300: "rgba(93,202,230,0.3)", // 30% opacity
+                500: "rgba(93,202,230,0.5)", // 50% opacity
+                700: "rgba(93,202,230,0.7)", // 70% opacity
+                900: "rgba(93,202,230,0.9)", // 90% opacity
+              },
+              secondary: {
+                DEFAULT: "#25f1dd",
+                500: "rgba(37,241,221,0.5)"  // 50% opacity
+              },
+              tertiary: "#b84318",
+              accent: "#d4ffe9",
+              accent2: "#d4ffe9",
+              accent3: "#A3E91C",
             },
           },
         },
