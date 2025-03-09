@@ -28,7 +28,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-40 flex flex-col items-center justify-center md:hidden">
           <ul className="flex flex-col items-center space-y-6 font-title font-bold">
-            <li><a href="#Home" className="text-accent2 hover:text-accent2dark text-xl p-2" onClick={toggleMenu}>Apply</a></li>
+            <li><a href="#Home" className="text-primary hover:text-primary/70 text-xl p-2" onClick={toggleMenu}>Apply</a></li>
             <li><a href="#AboutUs" className="text-gray-100 hover:text-gray-400 text-xl" onClick={toggleMenu}>About</a></li>
             <li><a href="#Schedule" className="text-gray-100 hover:text-gray-400 text-xl" onClick={toggleMenu}>Schedule</a></li>
             <li><a href="#Sponsors" className="text-gray-100 hover:text-gray-400 text-xl" onClick={toggleMenu}>Sponsors</a></li>
@@ -39,9 +39,9 @@ const Navbar = () => {
       )}
 
       <nav className="fixed top-0 left-0 right-0 mt-12 z-30 hidden md:flex justify-center text-sm">
-        <div className="bg-transparent backdrop-blur-3xl outline-secondary outline-2 py-4 px-3 rounded-2xl">
+        <div className="bg-transparent backdrop-blur-3xl border-primary border py-4 px-3 rounded-md">
           <ul className="flex space-x-2 font-title font-bold shadow-2xl">
-            <li><a href="#Home" className="text-accent2 hover:text-accent2dark p-2">Apply</a></li>
+            <li><a href="#Home" className="text-primary hover:text-primary/70 p-2">Apply</a></li>
             <li><a href="#AboutUs" className="mr-3 text-gray-100 hover:text-gray-400">About</a></li>
             <li><a href="#Schedule" className="mr-3 text-gray-100 hover:text-gray-400">Schedule</a></li>
             <li><a href="#Sponsors" className="mr-3 text-gray-100 hover:text-gray-400">Sponsors</a></li>
