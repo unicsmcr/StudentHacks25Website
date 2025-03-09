@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useGlitch } from 'react-powerglitch';
 
+
+
 const Sponsors = () => {
   // For animation of sponsors appearing
   const [visible, setVisible] = useState(false);
@@ -53,6 +55,7 @@ const Sponsors = () => {
       description: "Reality Augmentation Systems",
       color: "from-yellow-400 to-orange-500",
       shape: "hexagon",
+      logo: "public/vite.svg",
       link: "#"
     },
     {
@@ -64,6 +67,7 @@ const Sponsors = () => {
       description: "Network Protection Arrays",
       color: "from-gray-300 to-gray-400",
       shape: "triangle",
+      logo: "/public/images/net.png",
       link: "#"
     }
   ];
@@ -105,6 +109,35 @@ const Sponsors = () => {
 
   // Render placeholder logo based on shape type
   const renderPlaceholderLogo = (sponsor) => {
+    // If a logo path is provided, use the image
+    if (sponsor.logo) {
+      return (
+        <div className="w-6 h-6 flex items-center justify-center mr-3 overflow-hidden">
+          <img 
+            src={sponsor.logo} 
+            alt={`${sponsor.name} logo`} 
+            className="w-full h-full object-contain"
+          />
+        </div>
+      );
+    }
+
+    if (sponsor.logo && sponsor.logo.ensdWith(".svg")) {
+      return (
+        <div className="w-6 h-6 flex items-center justify-center mr-3 relative overflow-hidden">
+          <img 
+            src={sponsor.logo} 
+            alt={`${sponsor.name} logo`} 
+            className="w-full h-full object-contain relative z-10"
+          />
+          
+          {/* Auto-scanning line - will animate as soon as it appears */}
+          <div className="absolute left-0 top-0 right-0 h-[2px] bg-green-400/70 
+                        animate-scan"></div>
+        </div>
+      );
+    }
+    // fall back for logo disfunction 
     switch(sponsor.shape) {
       case 'circle':
         return (
@@ -279,7 +312,8 @@ const Sponsors = () => {
           </div>
         </div>
         
-        {/* Become a Sponsor Section with futuristic terminal style */}
+        {/* Become a Sponsor Section with futuristic terminal style 
+        
         <div 
           className="mt-28 py-8 flex flex-col items-center transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-[2400ms]"
           data-visible={visible}
@@ -309,7 +343,7 @@ const Sponsors = () => {
               </a>
             </div>
             
-            {/* Terminal style lines */}
+            
             <div className="mt-4 text-green-400/50 text-xs font-mono">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-green-400/50 rounded-full mr-2"></div>
@@ -321,8 +355,10 @@ const Sponsors = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
         
+
         {/* Futuristic background elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {/* Horizontal pulse lines */}
