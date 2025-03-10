@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaCalendarAlt, FaUser } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
+import logo from '../assets/logoTransparent.png';
 
 const Home = () => {
   const [terminalReady, setTerminalReady] = useState(false);
@@ -13,7 +14,7 @@ const Home = () => {
   const terminalRef = useRef(null);
 
   const calculateTimeLeft = () => {
-    const eventDate = new Date("March 6, 2025 11:28:00").getTime();
+    const eventDate = new Date("April 5, 2025 07:00:00").getTime();
     const currentTime = new Date().getTime();
     const difference = eventDate - currentTime;
 
@@ -102,9 +103,10 @@ useEffect(() => {
       
       <div className="max-w-4xl w-full space-y-8 z-10 mt-48">
         <div>
-          <h1 className="font-title text-5xl md:text-6xl text-primary font-bold mb-8 tracking-wider relative inline-block">
+          {/* <h1 className="font-title text-5xl md:text-6xl text-primary font-bold mb-8 tracking-wider relative inline-block">
             STUDENT HACK 2025
-          </h1>
+          </h1> */}
+          <img src={logo} alt="Student Hack 2025 Logo" className="w-full h-full max-w-xs mx-auto mb-8" />
           <p className="text-xl mb-2 text-gray-300 flex items-center justify-center">
             <FaCalendarAlt className="mr-2" /> April 3rd - 4th, 2025
           </p>

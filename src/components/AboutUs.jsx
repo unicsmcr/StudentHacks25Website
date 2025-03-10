@@ -344,7 +344,7 @@ const AboutUs = () => {
             className="text-5xl font-bold mb-6 font-title" 
             ref={glitchConstant.ref}
           >
-            About Us
+            ABOUT US
           </h2>
           <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
             We are UniCS, the Computer Science Society at the esteemed University of Manchester.
@@ -367,20 +367,20 @@ const AboutUs = () => {
         {/* Terminal Past Events Section */}
         <div 
           ref={infoRef} 
-          className="w-full transition-all duration-500 opacity-0 translate-y-5"
+          className="w-full transition-all duration-500 opacity-0 text-center translate-y-5"
           style={{ 
             opacity: visible ? 1 : 0, 
             transform: visible ? 'translateY(0)' : 'translateY(5px)',
             transitionDelay: '300ms'
           }}
         >
-          {/* <p className="text-accent2 text-3xl mb-9 text-center font-title">Past Events</p> */}
+          <p className="text-accent2 text-3xl mb-8 text-center font-title">Past Events</p>
           <div className="text-xs tracking-widest text-center text-accent2 uppercase mb-2">Event Timeline • Data: 04.03.2184</div>
           <p className="text-accent2/70 text-sm text-center tracking-widest uppercase mb-4">
             <span className="animate-pulse">[ACCESSING HISTORICAL ARCHIVES...]</span>
           </p>
           {/* Terminal Window */}
-          <div className="mx-auto w-full max-w-xl">
+          <div className="mx-auto w-full max-w-5xl">
             <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
