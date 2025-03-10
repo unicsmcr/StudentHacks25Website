@@ -40,7 +40,7 @@ const Schedule = () => {
     "days": [
       {
         "date": "Saturday",
-        "dayOfWeek": "3rd April",
+        "dayOfWeek": "5th April",
         "events": [
           { "time": "09:00 AM", "title": "Registration Opens", "description": "Please have your QR code ready!", "status": "completed" },
           { "time": "10:30 AM", "title": "Registration Closes", "status": "completed" },
@@ -59,7 +59,7 @@ const Schedule = () => {
       },
       {
         "date": "Sunday",
-        "dayOfWeek": "4th April", 
+        "dayOfWeek": "6th April", 
         "events": [
           { "time": "12:00 AM", "title": "Midnight Snack" },
           { "time": "02:00 AM", "title": "Minecraft Minigames" },
@@ -301,7 +301,7 @@ const Schedule = () => {
                   
                   {/* Terminal cursor blinking after outputs */}
                   {terminalReady && (
-                    <div className="mt-6">
+                    <div className="mt-6 -mb-4">
                       <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>
                     </div>
                   )}
