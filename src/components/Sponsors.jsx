@@ -183,25 +183,25 @@ const Sponsors = () => {
         <div className="text-center">
           <div className="inline-block relative">
             <h2 
-              className="text-5xl font-bold mb-6 font-title text-green-400" 
+              className="text-5xl font-bold mb-6 font-title text-primary" 
               ref={glitchConstant.ref}
             >
               SPONSORS
             </h2>
            
-            <div className="text-xs tracking-widest text-green-500 uppercase mb-2">Corporate Allies • Data: 09.03.2184</div>
+            <div className="text-xs tracking-widest text-accent2 uppercase mb-2">Corporate Allies • Data: 09.03.2184</div>
           </div>
-          <p className="text-green-400/70 text-sm tracking-widest uppercase mb-6">
+          <p className="text-accent2/70 text-sm tracking-widest uppercase mb-6">
             <span className="animate-pulse">[CONNECTING TO QUANTUM SECURE NETWORK...]</span>
           </p>
           
           {/* Terminal Window */}
           <div className="max-w-4xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
                data-visible={visible}>
-            <div className="bg-black border border-green-400/50 rounded-md overflow-hidden shadow-lg shadow-green-400/20">
+            <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
               {/* Terminal Header */}
-              <div className="bg-black border-b border-green-400/30 py-2 px-4 flex justify-between items-center">
-                <div className="text-green-400 font-mono text-xs">
+              <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
+                <div className="text-primary font-mono text-xs">
                   secure-shell@quantum-network:~/sponsors
                 </div>
                 <div className="flex space-x-2">
@@ -212,12 +212,12 @@ const Sponsors = () => {
               </div>
               
               {/* Terminal Content */}
-              <div className="p-5 bg-black font-mono text-sm text-green-400/90 h-[500px] overflow-y-auto">
+              <div className="p-5 bg-black font-mono text-sm text-primary/90 h-[500px] overflow-y-auto">
                 {/* Initial Connection Sequence */}
                 <div className="mb-2">$ establishing secure connection to quantum network...</div>
-                <div className="mb-2">$ running encryption protocols... <span className="text-green-400">OK</span></div>
-                <div className="mb-2">$ verifying credentials... <span className="text-green-400">VERIFIED</span></div>
-                <div className="mb-2">$ initializing data retrieval module... <span className="text-green-400">READY</span></div>
+                <div className="mb-2">$ running encryption protocols... <span className="text-primary">OK</span></div>
+                <div className="mb-2">$ verifying credentials... <span className="text-primary">VERIFIED</span></div>
+                <div className="mb-2">$ initializing data retrieval module... <span className="text-primary">READY</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --all-sponsors --format=detail</span></div>
                 
                 {/* Command Output - Sponsors */}
@@ -227,7 +227,7 @@ const Sponsors = () => {
                   </div>
                   
                   <div className="px-2 py-1 border-t border-b border-green-400/20 bg-green-400/5 mb-4">
-                    <div className="grid grid-cols-3 gap-2 text-xs text-green-400/70">
+                    <div className="grid grid-cols-3 gap-2 text-xs text-secondary/70">
                       <div>CORP_ID</div>
                       <div>NAME</div>
                       <div>SECTOR</div>
