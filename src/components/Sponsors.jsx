@@ -55,7 +55,7 @@ const Sponsors = () => {
       description: "Reality Augmentation Systems",
       color: "from-yellow-400 to-orange-500",
       shape: "hexagon",
-      logo: "public/vite.svg",
+      logo: "/vite.svg",
       link: "#"
     },
     {
@@ -67,7 +67,7 @@ const Sponsors = () => {
       description: "Network Protection Arrays",
       color: "from-gray-300 to-gray-400",
       shape: "triangle",
-      logo: "/public/images/net.png", // this logo is a place holder, and not a real sponsor
+      logo: "/images/net.png", // this logo is a place holder, and not a real sponsor
       link: "#"
     }
   ];
