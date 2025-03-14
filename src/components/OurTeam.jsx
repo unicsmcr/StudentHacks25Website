@@ -7,30 +7,6 @@ const OurTeam = () => {
   const [collapsedSections, setCollapsedSections] = useState({});
   const glitchTitle = useGlitch();
 
-  // useEffect(() => {
-  //       const observer = new IntersectionObserver(
-  //         ([entry]) => {
-  //           if (entry.isIntersecting) {
-  //             setVisible(true);
-  //             observer.disconnect();
-  //           }
-  //         },
-  //         {
-  //           threshold: 0.1,
-  //         }
-  //       );
-        
-  //       if (teamRef.current) {
-  //         observer.observe(teamRef.current);
-  //       }
-        
-  //       return () => {
-  //         if (teamRef.current) {
-  //           observer.disconnect();
-  //         }
-  //       };
-  //     }, []);
-
   // Organize team members by department
   const teamsByDepartment = {
     "Directors": [
@@ -119,54 +95,60 @@ const OurTeam = () => {
               {/* Command Output - Personnel */}
               <div className="mb-6">
                 <div className="text-yellow-400 mb-3">
-                  [QUANTUM PERSONNEL DATABASE] - DEPARTMENTS FOUND {Object.keys(teamsByDepartment).length}
+                  [QUANTUM PERSONNEL DATABASE] - PERSONNEL FOUND {Object.values(teamsByDepartment).flat().length}
                 </div>
               </div>
               
               {/* Departments */}
               {Object.entries(teamsByDepartment).map(([department, members], deptIndex) => (
-                <div key={department} className="mb-6">
-                  {/* Department Header - Collapsible */}
-                  <div 
-                    className="flex w-full items-center px-2 py-2 border-t border-b border-primary/20 bg-primary/5 cursor-pointer select-none hover:bg-primary/10 transition-colors"
-                    onClick={() => toggleSection(department)}
-                  >
-                    <span className="text-gray-500 mr-2">{"> "}</span>
-                    <span className="text-secondary text-left w-full font-bold flex-grow p-1 transition-all duration-300 select-none">
-                      <span className="text-primary/70">$ get team </span>
-                      <span className="text-accent2 font-bold">"{department}"</span>
-                      <span className="text-primary/70"> --members --status=active</span>
-                    </span>
-                    <div className={`text-primary transition-transform duration-300 ${collapsedSections[department] ? 'rotate-180' : ''}`}>
-                      ▼
-                    </div>
-                  </div>
+                <div key={department} className="">
                   
-                  {/* Team members container with smooth animation */}
+                  {/* Team members container with smooth animation - no borders */}
                   <div 
-                    className="w-full overflow-hidden transition-all duration-300 ease-in-out bg-primary/5 border-l border-r border-primary/20"
+                    className="w-full overflow-hidden transition-all duration-300 ease-in-out"
                     style={{
                       maxHeight: collapsedSections[department] ? '1000px' : '0',
                       opacity: collapsedSections[department] ? 1 : 0,
                     }}
                   >
-                    <div className="p-4">
-                      <div className="flex flex-wrap justify-center gap-4 p-4">
+                    <div className="">
+                      <div className="flex flex-wrap justify-center gap-4 p-2">
                         {members.map((member, index) => (
                           <div
                             key={index}
-                            className="flex flex-row place-items-center bg-[#0d1e29] w-52 h-24 rounded-lg shadow-lg overflow-hidden"
+                            className="flex flex-row place-items-center bg-[#0d1e29] w-64 h-32 rounded-md shadow-lg overflow-hidden relative group"
                           >
-                            <div className="w-20 h-20 mx-auto ml-2 overflow-hidden rounded-full border-2 border-accent2">
-                              <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full h-full object-cover"
-                              />
+                            <div className="relative w-28 h-28 ml-2 flex items-center justify-center">
+                              <div className="absolute inset-0 bg-accent2/5 clip-path-hex"></div>
+                              <div className="absolute inset-0 clip-path-hex border border-accent2/30"></div>
+                              {/* Image */}
+                              <div className="w-24 h-24 clip-path-hex overflow-hidden">
+                                <img
+                                  src={member.image}
+                                  alt={member.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              
+                              <div className="absolute -top-1 right-1/2 w-4 h-px bg-accent2/40"></div>
+                              <div className="absolute -bottom-1 right-1/2 w-4 h-px bg-accent2/40"></div>
                             </div>
-                            <div className="text-center p-2">
-                              <h3 className="text-sm font-semibold text-white">{member.name}</h3>
-                              <p className="text-accent2 text-xs">{member.role}</p>
+                            
+                            {/* Text content */}
+                            <div className="text-left pl-4 pr-2 flex flex-col justify-center h-full">
+                              {/* <div className="text-xs text-accent2/50 mb-1 font-mono tracking-wider">ID-{(index + 10000).toString(16).toUpperCase()}</div> */}
+                              <h3 className="text-sm font-semibold text-white mb-1">{member.name}</h3>
+                              <p className="text-accent2 text-xs">
+                                <span className="text-accent2/50 mr-1">//</span>
+                                {member.role}
+                              </p>
+
+                              {/* could add social links heree */}
+
+                              <div className="absolute top-2 right-2 flex items-center">
+                                <div className="w-2 h-2 rounded-full bg-green-400 mr-1 animate-pulse"></div>
+                                <span className="text-xs text-green-400/70 font-mono">ACTIVE</span>
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -176,8 +158,6 @@ const OurTeam = () => {
                 </div>
               ))}
               
-              
-              
               <div className="mt-6">
                 <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>
               </div>
@@ -185,6 +165,13 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
+      
+      {/* Add styles for clip path and animations */}
+      <style jsx>{`
+        .clip-path-hex {
+          clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+        }
+      `}</style>
     </section>
   );
 };
