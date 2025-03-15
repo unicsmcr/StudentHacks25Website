@@ -221,8 +221,8 @@ const events = [
 
 const AboutUs = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [visible, setVisible] = useState(false);
-  const [terminalReady, setTerminalReady] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [terminalReady, setTerminalReady] = useState(true);
   const infoRef = useRef(null);
   const terminalContentRef = useRef(null);
   const containerRef = useRef(null);
@@ -233,38 +233,38 @@ const AboutUs = () => {
     duration: 3950,
   }); 
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setVisible(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     {
+  //       threshold: 0.1,
+  //     }
+  //   );
     
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+  //   if (containerRef.current) {
+  //     observer.observe(containerRef.current);
+  //   }
     
-    return () => {
-      if (containerRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (containerRef.current) {
+  //       observer.disconnect();
+  //     }
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    if (visible) {
-      const timer = setTimeout(() => {
-        setTerminalReady(true);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
+  // useEffect(() => {
+  //   if (visible) {
+  //     const timer = setTimeout(() => {
+  //       setTerminalReady(true);
+  //     }, 1500);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [visible]);
 
   // Handle keyboard press (ESC key)
   useEffect(() => {
@@ -374,7 +374,7 @@ const AboutUs = () => {
             transitionDelay: '300ms'
           }}
         >
-          <p className="text-accent2 text-3xl mb-8 text-center font-title">Past Events</p>
+          {/* <p className="text-accent2 text-3xl mb-8 text-center font-title">Past Events</p> */}
           <div className="text-xs tracking-widest text-center text-accent2 uppercase mb-2">Event Timeline • Data: 04.03.2184</div>
           <p className="text-accent2/70 text-sm text-center tracking-widest uppercase mb-4">
             <span className="animate-pulse">[ACCESSING HISTORICAL ARCHIVES...]</span>
@@ -398,22 +398,15 @@ const AboutUs = () => {
               <div 
                 ref={terminalContentRef}
                 style={{scrollBehavior: "smooth"}}
-                className="p-5 bg-black font-mono text-sm text-primary/90 max-h-[500px] overflow-y-auto relative"
+                className="p-5 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto relative"
               >
                 {/* Initial Connection Sequence */}
-                <div className="mb-2">$ connecting to historical archives...</div>
-                <div className="mb-2">$ authentication successful <span className="text-green-500">OK</span></div>
                 <div className="mb-2">$ retrieving past event data... <span className="text-primary">CONNECTED</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --past-events --format=detailed</span></div>
                 
                 {/* Command Output */}
                 <div className="text-yellow-400 mb-3">
                   [HISTORICAL DATABASE] - EVENT ENTRIES FOUND: {events.length}
-                </div>
-                
-                {/* Type effect for command prompt */}
-                <div className="mb-4">
-                  <span className="text-green-400">SELECT AN EVENT YEAR TO ACCESS DETAILED RECORDS</span>
                 </div>
                 
                 {/* Interactive Grid of Event Years */}
@@ -504,33 +497,6 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Futuristic background elements - matching Schedule section */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Horizontal pulse lines */}
-        <div className="absolute left-0 top-1/3 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
-        <div className="absolute right-0 top-2/3 w-full h-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
-        
-        {/* Vertical pulse lines */}
-        <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
-        <div className="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
-        
-        {/* Data streams */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[20%]">
-            <div className="h-20 w-full bg-primary/50 animate-[ping_4s_infinite]"></div>
-          </div>
-          <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[40%]">
-            <div className="h-20 w-full bg-primary/50 animate-[ping_5s_infinite]"></div>
-          </div>
-          <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[60%]">
-            <div className="h-20 w-full bg-primary/50 animate-[ping_6s_infinite]"></div>
-          </div>
-          <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[80%]">
-            <div className="h-20 w-full bg-primary/50 animate-[ping_7s_infinite]"></div>
           </div>
         </div>
       </div>
