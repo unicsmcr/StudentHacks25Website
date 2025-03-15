@@ -374,7 +374,7 @@ const AboutUs = () => {
             transitionDelay: '300ms'
           }}
         >
-          <p className="text-accent2 text-3xl mb-8 text-center font-title">Past Events</p>
+          {/* <p className="text-accent2 text-3xl mb-8 text-center font-title">Past Events</p> */}
           <div className="text-xs tracking-widest text-center text-accent2 uppercase mb-2">Event Timeline • Data: 04.03.2184</div>
           <p className="text-accent2/70 text-sm text-center tracking-widest uppercase mb-4">
             <span className="animate-pulse">[ACCESSING HISTORICAL ARCHIVES...]</span>
@@ -398,22 +398,15 @@ const AboutUs = () => {
               <div 
                 ref={terminalContentRef}
                 style={{scrollBehavior: "smooth"}}
-                className="p-5 bg-black font-mono text-sm text-primary/90 max-h-[700px] overflow-y-auto relative"
+                className="p-5 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto relative"
               >
                 {/* Initial Connection Sequence */}
-                <div className="mb-2">$ connecting to historical archives...</div>
-                <div className="mb-2">$ authentication successful <span className="text-green-500">OK</span></div>
                 <div className="mb-2">$ retrieving past event data... <span className="text-primary">CONNECTED</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --past-events --format=detailed</span></div>
                 
                 {/* Command Output */}
                 <div className="text-yellow-400 mb-3">
                   [HISTORICAL DATABASE] - EVENT ENTRIES FOUND: {events.length}
-                </div>
-                
-                {/* Type effect for command prompt */}
-                <div className="mb-4">
-                  <span className="text-green-400">SELECT AN EVENT YEAR TO ACCESS DETAILED RECORDS</span>
                 </div>
                 
                 {/* Interactive Grid of Event Years */}

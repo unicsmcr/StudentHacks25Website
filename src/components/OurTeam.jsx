@@ -87,8 +87,6 @@ const OurTeam = () => {
 
             {/* Terminal Content */}
             <div className="p-5 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto">
-              <div className="mb-2">$ establishing connection to personnel database...</div>
-              <div className="mb-2">$ running quantum authentication... <span className="text-primary">OK</span></div>
               <div className="mb-2">$ accessing personnel matrix... <span className="text-primary">CONNECTED</span></div>
               <div className="mb-4">$ executing query: <span className="text-white">get --active-personnel --format=detailed</span></div>
               
