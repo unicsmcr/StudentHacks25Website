@@ -5,9 +5,9 @@ import { useGlitch } from 'react-powerglitch';
 
 const Sponsors = () => {
   // For animation of sponsors appearing
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const sponsorsRef = useRef(null);
-  const [terminalReady, setTerminalReady] = useState(false);
+  const [terminalReady, setTerminalReady] = useState(true);
   
   // Glitch effects
   const glitchConstant = useGlitch({
@@ -73,39 +73,39 @@ const Sponsors = () => {
   ];
   
   // Intersection observer to trigger animations when scrolled into view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setVisible(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     {
+  //       threshold: 0.1,
+  //     }
+  //   );
     
-    if (sponsorsRef.current) {
-      observer.observe(sponsorsRef.current);
-    }
+  //   if (sponsorsRef.current) {
+  //     observer.observe(sponsorsRef.current);
+  //   }
     
-    return () => {
-      if (sponsorsRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (sponsorsRef.current) {
+  //       observer.disconnect();
+  //     }
+  //   };
+  // }, []);
 
-  // Terminal loading effect
-  useEffect(() => {
-    if (visible) {
-      const timer = setTimeout(() => {
-        setTerminalReady(true);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
+  // // Terminal loading effect
+  // useEffect(() => {
+  //   if (visible) {
+  //     const timer = setTimeout(() => {
+  //       setTerminalReady(true);
+  //     }, 1500);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [visible]);
 
   // Render placeholder logo based on shape type
   const renderPlaceholderLogo = (sponsor) => {

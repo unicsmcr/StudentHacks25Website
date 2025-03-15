@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { SiTruenas } from 'react-icons/si';
 import { useGlitch } from 'react-powerglitch';
 
 const Schedule = () => {
   // For animation of schedule appearing
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const scheduleRef = useRef(null);
-  const [terminalReady, setTerminalReady] = useState(false);
+  const [terminalReady, setTerminalReady] = useState(true);
   
   // Glitch effects
   const glitchConstant = useGlitch({
@@ -40,7 +41,7 @@ const Schedule = () => {
     "days": [
       {
         "date": "Saturday",
-        "dayOfWeek": "3rd April",
+        "dayOfWeek": "5th April",
         "events": [
           { "time": "09:00 AM", "title": "Registration Opens", "description": "Please have your QR code ready!", "status": "completed" },
           { "time": "10:30 AM", "title": "Registration Closes", "status": "completed" },
@@ -59,7 +60,7 @@ const Schedule = () => {
       },
       {
         "date": "Sunday",
-        "dayOfWeek": "4th April", 
+        "dayOfWeek": "6th April", 
         "events": [
           { "time": "12:00 AM", "title": "Midnight Snack" },
           { "time": "02:00 AM", "title": "Minecraft Minigames" },
@@ -80,40 +81,40 @@ const Schedule = () => {
     ]
   };
 
-  // Intersection observer to trigger animations when scrolled into view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+  // // Intersection observer to trigger animations when scrolled into view
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setVisible(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     {
+  //       threshold: 0.1,
+  //     }
+  //   );
     
-    if (scheduleRef.current) {
-      observer.observe(scheduleRef.current);
-    }
+  //   if (scheduleRef.current) {
+  //     observer.observe(scheduleRef.current);
+  //   }
     
-    return () => {
-      if (scheduleRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (scheduleRef.current) {
+  //       observer.disconnect();
+  //     }
+  //   };
+  // }, []);
 
   // Terminal loading effect
-  useEffect(() => {
-    if (visible) {
-      const timer = setTimeout(() => {
-        setTerminalReady(true);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
+  // useEffect(() => {
+  //   if (visible) {
+  //     const timer = setTimeout(() => {
+  //       setTerminalReady(true);
+  //     }, 1500);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [visible]);
 
   const getStatusStyles = (status) => {
     switch(status) {
@@ -208,10 +209,8 @@ const Schedule = () => {
               </div>
               
               {/* Terminal Content */}
-              <div className="p-5 px-2 bg-black font-mono text-sm text-primary/90 max-h-[700px] overflow-y-auto md:pl-8">
+              <div className="p-5 px-2 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto md:pl-8">
                 {/* Initial Connection Sequence */}
-                <div className="mb-2">$ establishing connection to temporal database...</div>
-                <div className="mb-2">$ running quantum authentication... <span className="text-primary">OK</span></div>
                 <div className="mb-2">$ accessing schedule matrix... <span className="text-primary">CONNECTED</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --event-timeline --format=detailed</span></div>
                 
@@ -301,84 +300,12 @@ const Schedule = () => {
                   
                   {/* Terminal cursor blinking after outputs */}
                   {terminalReady && (
-                    <div className="mt-6">
+                    <div className="mt-6 -mb-4">
                       <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>
                     </div>
                   )}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Legend section with terminal styling */}
-        <div 
-          className="mt-12 py-6 flex flex-col items-center transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-[1800ms]"
-          data-visible={visible}
-        >
-          <div className="relative max-w-md w-full border border-primary/50 rounded-md p-4 bg-black/50 backdrop-blur-sm">
-            <div className="absolute -top-3 left-4 bg-black px-2 text-primary text-xs font-mono">STATUS.CODES</div>
-            
-            <div className="text-primary font-mono text-sm mb-4">
-              <span className="text-gray-500">event@hackathon:~$</span> show --status-codes
-            </div>
-            
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                <span className="text-green-500">LIVE_NOW</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-gray-300 rounded-full mr-2"></div>
-                <span className="text-gray-200">SCHEDULED</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-gray-500 rounded-full mr-2"></div>
-                <span className="text-gray-400">COMPLETED</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                <span className="text-red-400">CANCELLED</span>
-              </div>
-            </div>
-            
-            {/* Terminal style lines */}
-            <div className="mt-4 pt-3 border-t border-primary/20 text-primary/50 text-xs font-mono">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-primary/50 rounded-full mr-2"></div>
-                REALTIME_UPDATES_ENABLED
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-primary/50 rounded-full mr-2"></div>
-                QUANTUM_SYNC_ACTIVE
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Futuristic background elements - same as Sponsors */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Horizontal pulse lines */}
-          <div className="absolute left-0 top-1/3 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
-          <div className="absolute right-0 top-2/3 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
-          
-          {/* Vertical pulse lines */}
-          <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
-          <div className="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
-          
-          {/* Data stream - using Tailwind animations */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[20%]">
-              <div className="h-20 w-full bg-primary/50 animate-[ping_4s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[40%]">
-              <div className="h-20 w-full bg-primary/50 animate-[ping_5s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[60%]">
-              <div className="h-20 w-full bg-primary/50 animate-[ping_6s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-primary/20 overflow-hidden left-[80%]">
-              <div className="h-20 w-full bg-primary/50 animate-[ping_7s_infinite]"></div>
             </div>
           </div>
         </div>

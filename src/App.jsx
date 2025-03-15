@@ -6,6 +6,8 @@ import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
 import Navbar from "./components/Navbar";
 import OurTeam from "./components/OurTeam";
+import Footer from "./components/Footer";
+import BackgroundEffects from "./components/BackgroundEffects";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useMemo, useState } from "react";
@@ -90,7 +92,8 @@ const App = () => {
 
 
   return (
-    <div class="container" className="text-gray-900 back">
+    <div class="container" className=" back">
+      <BackgroundEffects /> {/* Ensures the background effects are displayed over all components */}
       <Navbar />
       <Particles
         id="tsparticles"
@@ -103,6 +106,7 @@ const App = () => {
       <Sponsors />
       <FAQ />
       <OurTeam />
+      <Footer/>
     </div>
   );
 };
