@@ -112,7 +112,7 @@ const Sponsors = () => {
     // If a logo path is provided, use the image
     if (sponsor.logo) {
       return (
-        <div className="w-6 h-6 flex items-center justify-center mr-3 overflow-hidden">
+        <div className="w-16 h-16 flex items-center justify-center mr-5 overflow-hidden">
           <img 
             src={sponsor.logo} 
             alt={`${sponsor.name} logo`} 
@@ -243,30 +243,47 @@ const Sponsors = () => {
                     </div>
                   )}
                   
-                  {/* Actual sponsor outputs in terminal style */}
                   {terminalReady && futuristicSponsors.map((sponsor, index) => (
-                    <div 
-                      key={sponsor.id}
-                      className={`mb-6 opacity-0 transition-all duration-500 transform translate-y-2
-                                ${terminalReady ? 'opacity-100 translate-y-0' : ''}`}
-                      style={{transitionDelay: `${index * 400}ms`}}
-                    >
-                      <div className="flex items-center mb-1">
-                        <span className="text-gray-500 mr-2">{">"}</span>
-                        <div className="text-yellow-400 font-bold">
-                          {sponsor.code}
+                  <div 
+                    key={sponsor.id}
+                    className={`mb-10 opacity-0 transition-all duration-500 transform translate-y-2
+                              ${terminalReady ? 'opacity-100 translate-y-0' : ''}`}
+                    style={{transitionDelay: `${index * 400}ms`}}
+                  >
+                    <div className="flex items-center mb-1">
+                      <span className="text-gray-500 mr-2">{">"}</span>
+                      <div className="text-yellow-400 font-bold">
+                        {sponsor.code}
+                      </div>
+                    </div>
+                    
+                    <div className="pl-6 border-l border-primary/20 ml-2 mb-3">
+                      {/* Center logo above name */}
+                      <div className="flex flex-col items-center text-center mb-4 mt-3">
+                        <div className="mb-3">
+                          {/* Logo rendering function - use the larger size as previously suggested */}
+                          {sponsor.logo ? (
+                            <div className="w-24 h-24 flex items-center justify-center overflow-hidden ">
+                              <img 
+                                src={sponsor.logo} 
+                                alt={`${sponsor.name} logo`} 
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${sponsor.color} flex items-center justify-center`}>
+                              <span className="text-3xl text-white font-bold">{sponsor.name.substring(0, 2)}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="text-white text-lg font-bold">
+                          {sponsor.name}
                         </div>
                       </div>
                       
-                      <div className="pl-6 border-l border-green-400/20 ml-2 mb-3">
-                        <div className="flex items-center my-2">
-                          {renderPlaceholderLogo(sponsor)}
-                          <div className="text-white text-base font-bold">
-                            {sponsor.name}
-                          </div>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-green-400/80 mb-2">
+                      {/* Terminal readout style information */}
+                      <div className="border border-primary/10 bg-primary/5 rounded p-3 mb-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-primary/80 mb-2">
                           <div>
                             <span className="text-gray-500">SECTOR:</span> {sponsor.sector}
                           </div>
@@ -275,24 +292,25 @@ const Sponsors = () => {
                           </div>
                         </div>
                         
-                        <div className="text-gray-300 text-sm mb-2 border-t border-green-400/10 pt-2">
+                        <div className="text-gray-300 text-sm border-t border-primary/10 pt-2 mt-2">
                           {sponsor.description}
                         </div>
-                        
-                        <div className="flex justify-between text-xs text-gray-500 mt-2">
-                          <div>
-                            STATUS: <span className="text-green-400">ACTIVE</span>
-                          </div>
-                          <a 
-                            href={sponsor.link} 
-                            className="text-blue-400 hover:underline hover:text-blue-300"
-                          >
-                            access://profile/{sponsor.code.toLowerCase()}
-                          </a>
+                      </div>
+                      
+                      <div className="flex justify-between text-xs text-gray-500 mt-2">
+                        <div>
+                          STATUS: <span className="text-primary">ACTIVE</span>
                         </div>
+                        <a 
+                          href={sponsor.link} 
+                          className="text-blue-400 hover:underline hover:text-blue-300"
+                        >
+                          access://profile/{sponsor.code.toLowerCase()}
+                        </a>
                       </div>
                     </div>
-                  ))}
+                  </div>
+                ))}
                   
                   {/* Terminal cursor blinking after outputs */}
                   {terminalReady && (

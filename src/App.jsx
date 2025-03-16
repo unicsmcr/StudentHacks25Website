@@ -6,6 +6,7 @@ import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
 import Navbar from "./components/Navbar";
 import OurTeam from "./components/OurTeam";
+import Footer from "./components/Footer";
 import BackgroundEffects from "./components/BackgroundEffects";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -105,6 +106,7 @@ const App = () => {
       <Sponsors />
       <FAQ />
       <OurTeam />
+      <Footer/>
     </div>
   );
 };
