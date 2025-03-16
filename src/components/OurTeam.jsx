@@ -67,7 +67,7 @@ const OurTeam = () => {
             </div>
 
             {/* Terminal Content */}
-            <div className="p-3 sm:p-5 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto">
+            <div className="p-3 sm:p-5 bg-black font-mono text-sm text-primary/90 max-h-[500px] overflow-y-auto">
               <div className="mb-2">$ accessing personnel matrix... <span className="text-primary">CONNECTED</span></div>
               <div className="mb-4">$ executing query: <span className="text-white">get --active-personnel --format=detailed</span></div>
               
