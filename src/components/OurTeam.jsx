@@ -32,7 +32,7 @@ const OurTeam = () => {
     >
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
       <div className="absolute inset-0 pointer-events-none opacity-5 bg-[image:linear-gradient(transparent_0%,rgba(93,202,230,0.05)_50%,transparent_100%)] bg-[size:100%_4px]"></div>
-      
+
       <div className="max-w-7xl mx-auto w-full relative z-10 text-center">
         {/* Section Header */}
         <div className="text-center">
@@ -70,20 +70,22 @@ const OurTeam = () => {
             <div className="p-3 sm:p-5 bg-black font-mono text-sm text-primary/90 max-h-[500px] overflow-y-auto">
               <div className="mb-2">$ accessing personnel matrix... <span className="text-primary">CONNECTED</span></div>
               <div className="mb-4">$ executing query: <span className="text-white">get --active-personnel --format=detailed</span></div>
-              
+
               {/* Command Output - Personnel */}
               <div className="mb-6">
                 <div className="text-yellow-400 mb-3">
                   [PERSONNEL DATABASE] - PERSONNEL FOUND {Object.values(teamsByDepartment).flat().length}
                 </div>
               </div>
-              
+
               {/* Departments */}
+
               {Object.entries(teamsByDepartment).map(([department, members], deptIndex) => (
+
                 <div key={department} className="">
-                  
+                  <h3 className="text-lg font-bold text-white mt-4">{department}</h3>
                   {/* Team members container with smooth animation - no borders */}
-                  <div 
+                  <div
                     className="w-full overflow-hidden transition-all duration-300 ease-in-out"
                     style={{
                       maxHeight: collapsedSections[department] ? '1000px' : '0',
@@ -112,7 +114,7 @@ const OurTeam = () => {
                               <div className="absolute -top-1 right-1/2 w-2 xs:w-3 sm:w-4 h-px bg-accent2/40"></div>
                               <div className="absolute -bottom-1 right-1/2 w-2 xs:w-3 sm:w-4 h-px bg-accent2/40"></div>
                             </div>
-                            
+
                             {/* Text content */}
                             <div className="text-left pl-1 sm:pl-3 md:pl-4 pr-1 sm:pr-2 flex flex-col justify-center h-full">
                               <p className="text-xs sm:text-base md:text-lg font-bold mt-1 text-white">{member.name}</p>
@@ -123,6 +125,13 @@ const OurTeam = () => {
                                 <div className="w-1 sm:w-2 h-1 sm:h-2 rounded-full bg-green-400 mr-1 animate-pulse"></div>
                                 <span className="text-[10px] sm:text-sm md:text-base text-green-400/70 font-mono">ACTIVE</span>
                               </div>
+                              {member.PersonalWebsite && <a className="text-accen1t1 text-xs mt-1 mb-1" target="_blank" href={member.PersonalWebsite}> Portfolio  </a>}
+                              {/* {!member.PersonalWebsite && <br />} */}
+                              <div className="flex flex-row">
+                                {member.LinkedIn && <a target="_blank" href={member.LinkedIn}> <img className="w-6 h-6 mt-1 mb-[-1]" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png?20140125013055"></img></a>}
+                                {member.GitHub && <a target="_blank" href={member.GitHub}> <img className="w-6 h-6 mt-1 mb-[-1] mx-2 bg-white" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png"></img></a>}
+
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -131,7 +140,7 @@ const OurTeam = () => {
                   </div>
                 </div>
               ))}
-              
+
               <div className="mt-6">
                 <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>
               </div>
@@ -139,7 +148,7 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Add styles for clip path and animations */}
       <style jsx="true">{`
         .clip-path-hex {
