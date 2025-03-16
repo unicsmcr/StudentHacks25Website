@@ -108,12 +108,12 @@ useEffect(() => {
           </h1> */}
           <img src={logo} alt="Student Hack 2025 Logo" className="w-full h-full max-w-xs mx-auto mb-8" />
           <p className="text-xl mb-2 text-gray-300 flex items-center justify-center">
-            <FaCalendarAlt className="mr-2" /> April 3rd - 4th, 2025
+            <FaCalendarAlt className="mr-2" /> April 5th - 6th, 2025
           </p>
           <p className="text-xl mb-16 text-gray-300 flex items-center justify-center">
             <FaUser className="mr-2" /> Nancy Rothwell
           </p>
-          <div className="text-xs tracking-widest text-accent2 uppercase -mb-4">Time Synchronization • Data: 04.03.2184</div>
+          <div className="text-xs tracking-widest text-accent2 uppercase -mb-4">UNICS NETWORK • Data: 30.02.2184</div>
         </div>
         
         <div className="mx-auto w-full max-w-2xl transition-all duration-500 transform opacity-100 translate-y-0">
@@ -121,7 +121,7 @@ useEffect(() => {
             {/* Terminal Header */}
             <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
               <div className="text-primary font-mono text-xs">
-                countdown@quantum-network:~/event-timer
+                secure-shell@unics-network:~/event-timer
               </div>
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -131,22 +131,16 @@ useEffect(() => {
             </div>
             
             {/* Terminal Content */}
-            <div className="p-5 bg-black font-mono text-sm text-primary/90 h-32 overflow-y-hidden" ref={terminalRef}>
+            <div className="p-3 bg-black font-mono text-xs md:text-sm text-primary/90 h-22 overflow-y-hidden" ref={terminalRef}>
               {/* Initial Connection Sequence */}
               <div className="whitespace-pre-line">{terminalText}</div>
               
               {typingComplete && (
                 <>
-                  <div className="my-1 text-green-500">CONNECTION ESTABLISHED</div>
-                  <div className="mb-2">$ executing countdown... <span className="text-primary">ACTIVE</span></div>
+                  <div className="mt-1 animate-pulse text-green-500">CONNECTION ESTABLISHED</div>
                 </>
               )}
               
-              {!terminalReady && typingComplete && (
-                <div className="animate-pulse mt-1">
-                  <span className="inline-block w-2 h-4 bg-primary/80"></span>
-                </div>
-              )}
             </div>
             
             {/* Countdown Display - This stays hidden until countdownVisible is true */}
@@ -183,9 +177,7 @@ useEffect(() => {
                     </div>
                   ))}
                 </div>
-                
-                <div className="text-xs text-primary/50 font-mono mt-3 animate-pulse">QUANTUM-ENTANGLED TIME SYNCHRONIZATION ACTIVE</div>
-              </div>
+                              </div>
             </div>
           </div>
         </div>
@@ -202,13 +194,13 @@ useEffect(() => {
             <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="group">
               <FaDiscord className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={28} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group">
+            <a href="https://www.instagram.com/unics_hackathons/" target="_blank" rel="noopener noreferrer" className="group">
               <FaInstagram className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={28} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group">
+            <a href="https://www.linkedin.com/company/unics-hackathons/" target="_blank" rel="noopener noreferrer" className="group">
               <FaLinkedin className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={28} />
             </a>
-            <a href="mailto:example@example.com" className="group">
+            <a href="mailto:hackathons@unicsmcr.com" className="group">
               <MdMail className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={30} />
             </a>
           </div>

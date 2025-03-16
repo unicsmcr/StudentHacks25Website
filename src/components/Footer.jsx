@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
+import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { MdMail } from "react-icons/md";
 
 const Footer = () => {
   const footerRef = useRef(null);
-  
   
   const currentYear = new Date().getFullYear();
 
@@ -18,9 +19,9 @@ const Footer = () => {
       {/* Full-width Terminal-style Footer */}
       <div className="relative z-10 w-full">
         {/* Terminal Header - Full width */}
-        <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
+        <div className="bg-black border-b border-primary/30 pb-2 -mt-4 px-4 flex justify-between items-center">
           <div className="text-primary font-mono text-xs">
-            terminal@quantum-network:~/footer
+            secure-shell@unics-network:~/footer
           </div>
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -30,54 +31,45 @@ const Footer = () => {
         </div>
         
         {/* Terminal Content*/}
-        <div className="px-6 py-4 bg-black font-mono text-sm text-primary/90">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-              <div className="flex items-center">
-                <div className="text-xs text-gray-500 mr-2">$ cat ./system_info.txt</div>
-                <div className="text-accent2 text-sm">
-                  <span className="text-white font-bold">UNICS HACKATHON</span> | Quantum Network v2.1.84
+        <div className="bg-black font-mono text-sm text-primary/90 px-4">
+          <div className="relative w-full">
+            {/* Top section with system info - always left aligned */}
+            
+            {/* Bottom section with copyright and social media */}
+            <div className="flex flex-col sm:flex-row justify-between items-center mt-2">
+              <div className="flex flex-col text-left">
+                <div className="text-xs text-gray-500 text-left sm:mb-0">
+                  <span className="text-gray-600">$</span> echo "Designed by Affan, Shrey and Kaan"
+                </div>
+                <div className="text-xs text-gray-500 sm:mb-0">
+                  <span className="text-gray-600">$</span> echo "© 2025 Student Hack. All rights reserved."
+                </div>
+                {/* Terminal cursor */}
+                <div className="text-gray-500 text-xs mt-2 text-left">
+                  $ <span className="animate-pulse">_</span>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-x-6 gap-y-2">
-                <a 
-                  href="#privacy" 
-                  className="text-xs text-gray-400 hover:text-primary transition-colors"
-                >
-                  Privacy Policy
+
+              <div className="flex gap-x-4 sm:self-auto mt-4 sm:mt-0">
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="group">
+                  <FaDiscord className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={20} />
                 </a>
-                <a 
-                  href="#terms" 
-                  className="text-xs text-gray-400 hover:text-primary transition-colors"
-                >
-                  Terms of Service
+                <a href="https://www.instagram.com/unics_hackathons/" target="_blank" rel="noopener noreferrer" className="group">
+                  <FaInstagram className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={20} />
                 </a>
-                <a 
-                  href="#accessibility" 
-                  className="text-xs text-gray-400 hover:text-primary transition-colors"
-                >
-                  Accessibility
+                <a href="https://www.linkedin.com/company/unics-hackathons/" target="_blank" rel="noopener noreferrer" className="group">
+                  <FaLinkedin className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={20} />
+                </a>
+                <a href="mailto:hackathons@unicsmcr.com" className="group">
+                  <MdMail className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={22} />
                 </a>
               </div>
             </div>
             
-            <div className="flex justify-between items-center mt-2">
-              <div className="text-xs text-gray-500">
-                <span className="text-gray-600">$</span> echo "© {currentYear} UniCS Hackathon. All rights reserved."
-              </div>
-              
-              <div className="text-gray-500 text-xs">
-                $ <span className="animate-pulse">_</span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
-      
-      {/* Subtle decorative elements */}
-      <div className="absolute bottom-0 left-1/4 w-px h-12 bg-gradient-to-t from-transparent via-primary/30 to-transparent"></div>
-      <div className="absolute bottom-0 right-1/4 w-px h-12 bg-gradient-to-t from-transparent via-primary/30 to-transparent"></div>
     </footer>
   );
 };
