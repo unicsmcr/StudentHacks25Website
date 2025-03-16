@@ -70,7 +70,7 @@ const AboutUs = () => {
   return (
     <section 
       id="AboutUs"
-      className="pt-20 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       {/* Grid background and effects */}
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
@@ -143,7 +143,7 @@ const AboutUs = () => {
                 
                 {/* Command Output */}
                 <div className="text-yellow-400 mb-3">
-                  [EVENT-HISTORY DATABASE] - YEARS FOUND: {events.length}
+                  [EVENT-HISTORY DATABASE] - RECORDS FOUND: {events.length}
                 </div>
                 
                 {/* Horizontal Timeline/Year Selector */}

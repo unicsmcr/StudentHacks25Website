@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <nav className="fixed top-0 left-0 right-0 mt-12 z-30 hidden md:flex justify-center text-sm">
+      <nav className="fixed top-0 left-0 right-0 mt-8 z-30 hidden md:flex justify-center text-sm">
         <div className="bg-transparent backdrop-blur-3xl border-primary border py-4 px-3 rounded-md">
           <ul className="flex space-x-2 font-title font-bold shadow-2xl">
             <li><a href="#Home" className="text-primary hover:text-primary/70 p-2">Apply</a></li>

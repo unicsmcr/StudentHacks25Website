@@ -120,7 +120,7 @@ const Schedule = () => {
     <section
       id="Schedule"
       ref={scheduleRef}
-      className="pt-20 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       {/* Grid background and effects (same as Sponsors) */}
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
@@ -161,7 +161,7 @@ const Schedule = () => {
               </div>
               
               {/* Terminal Content */}
-              <div className="p-5 px-2 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto md:pl-8">
+              <div className="p-5 px-2 bg-black font-mono text-sm text-primary/90 max-h-[600px] overflow-y-auto md:pl-8">
                 {/* Initial Connection Sequence */}
                 <div className="mb-2">$ accessing schedule matrix... <span className="text-primary">CONNECTED</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --event-timeline --format=detailed</span></div>
@@ -169,7 +169,7 @@ const Schedule = () => {
                 {/* Command Output - Schedule */}
                 <div className="mb-6">
                   <div className="text-yellow-400 mb-3">
-                    [EVENT-SCHEDULE DATABASE] - EVENT DAYS FOUND: {scheduleData.days.length}
+                    [EVENT-SCHEDULE DATABASE] - RECORDS FOUND: {scheduleData.days.length}
                   </div>
                   
                   {/* Loading animation for terminal outputs */}

@@ -44,7 +44,7 @@ const FAQ = () => {
     <section
       ref={containerRef}
       id="FAQ"
-      className="pt-20 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
       <div className="absolute inset-0 pointer-events-none opacity-5 bg-[image:linear-gradient(transparent_0%,rgba(93,202,230,0.05)_50%,transparent_100%)] bg-[size:100%_4px]"></div>
@@ -74,14 +74,14 @@ const FAQ = () => {
             </div>
 
             {/* Terminal Content */}
-            <div className="p-5 bg-black font-mono text-sm text-primary/90 max-h-full overflow-y-auto">
+            <div className="p-5 bg-black font-mono text-sm text-primary/90 max-h-[600px] overflow-y-auto">
               <div className="mb-2">$ accessing query matrix... <span className="text-primary">CONNECTED</span></div>
               <div className="mb-4">$ executing query: <span className="text-white">get --query-history --format=detailed</span></div>
               
               {/* Command Output - Schedule */}
               <div className="mb-6">
                 <div className="text-yellow-400 mb-3">
-                  [FAQS DATABASE] - QUESTIONS FOUND {questions.length}
+                  [FAQS DATABASE] - RECORDS FOUND {questions.length}
                 </div>
               </div>
               
