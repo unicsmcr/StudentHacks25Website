@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaCalendarAlt, FaUser } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaLocationPin } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 
 const fullText = "$ establishing connection to temporal network...\n$ calculating time until event horizon...";
@@ -96,27 +97,35 @@ useEffect(() => {
       <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
       <div className="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
       
-      <div className="max-w-4xl w-full space-y-8 z-10 mt-48">
-        <div>
-          {/* <h1 className="font-title text-5xl md:text-6xl text-primary font-bold mb-8 tracking-wider relative inline-block">
-            STUDENT HACK 2025
-          </h1> */}
-          <img src="images/logoTransparent.png" alt="Student Hack 2025 Logo" className="w-full h-full max-w-xs mx-auto mb-8" />
-          <p className="text-xl mb-2 text-gray-300 flex items-center justify-center">
-            <FaCalendarAlt className="mr-2" /> April 5th - 6th, 2025
-          </p>
-          <p className="text-xl mb-16 text-gray-300 flex items-center justify-center">
-            <FaUser className="mr-2" /> Nancy Rothwell
-          </p>
-          <div className="text-xs tracking-widest text-accent2 uppercase -mb-4">UNICS NETWORK • Data: 30.02.2184</div>
-        </div>
+      <div className="max-w-4xl w-full space-y-8 z-10">
+      <div>
+        <img src="images/logoTransparent.png" alt="Student Hack 2025 Logo" className="w-full h-full max-w-3xl mx-auto md:-mt-10" />
         
-        <div className="mx-auto w-full max-w-2xl transition-all duration-500 transform opacity-100 translate-y-0">
+        <p className="text-2xl mb-2 md:-mt-6 text-gray-300 flex items-center justify-center font-title font-bold">
+          <FaCalendarAlt className="mr-2" /> April 5th - 6th, 2025
+        </p>
+        
+        <p className="text-2xl mb-8 text-gray-300 flex items-center justify-center font-title font-bold">
+          <a href="https://maps.app.goo.gl/Bqum4uRB9pTxyUhi6" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center space-x-1 hover:text-gray-500 text-gray-300">
+            <FaLocationPin />
+            <span>Nancy Rothwell</span>
+          </a>
+        </p>
+
+        <div className="text-xs tracking-widest text-accent2 uppercase -mb-4">UNICS NETWORK • Data: 30.02.2184</div>
+      </div>
+
+
+        
+        <div className="mx-auto w-full max-w-2xl transform translate-y-0">
           <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
             {/* Terminal Header */}
             <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
               <div className="text-primary font-mono text-xs">
-                secure-shell@unics-network:~/event-timer
+                terminal@unics-network:~/timer
               </div>
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -153,7 +162,7 @@ useEffect(() => {
                       <div className="bg-primary/10 border border-primary/40 backdrop-blur-sm rounded-sm p-3 min-w-16 md:min-w-20 flex flex-col justify-center relative z-10 group-hover:bg-primary/20 transition-colors duration-300">
                         {/* Number display with matrix effect */}
                         <div className="relative h-10 overflow-hidden flex items-center justify-center">
-                          <span className="text-primary text-3xl font-bold z-10">
+                          <span className="text-gray-300 font-title text-3xl font-bold z-10">
                             {String(unit.value).padStart(2, '0')}
                           </span>
                           <div className="absolute inset-0 opacity-10 animate-pulse flex items-center justify-center">
@@ -186,7 +195,7 @@ useEffect(() => {
           </button>
           
           <div className="flex gap-4 justify-center">
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="group">
+            <a href="https://discord.gg/UXfP42SP" target="_blank" rel="noopener noreferrer" className="group">
               <FaDiscord className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={28} />
             </a>
             <a href="https://www.instagram.com/unics_hackathons/" target="_blank" rel="noopener noreferrer" className="group">

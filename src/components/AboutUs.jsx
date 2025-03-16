@@ -70,7 +70,7 @@ const AboutUs = () => {
   return (
     <section 
       id="AboutUs"
-      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-4 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       {/* Grid background and effects */}
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
@@ -85,7 +85,7 @@ const AboutUs = () => {
           >
             ABOUT US
           </h2>
-          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
             We are UniCS, the Computer Science Society at the esteemed University of Manchester.
             Our mission is to foster unity among students through a diverse array of student-led events,
             with our hackathons standing out as our flagship offerings, widely celebrated within our community.
@@ -102,7 +102,6 @@ const AboutUs = () => {
           </Slider>
         </div>
   
-        {/* Terminal Past Events Section - Redesigned */}
         <div 
           ref={infoRef} 
           className="w-full transition-all duration-500 opacity-0 text-center translate-y-5"
@@ -122,8 +121,8 @@ const AboutUs = () => {
             <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
-                <div className="text-primary font-mono text-xs">
-                secure-shell@unics-network:~/event-history
+                <div className="text-primary font-mono text-xs text-left">
+                terminal@unics-network:~/history
                 </div>
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>

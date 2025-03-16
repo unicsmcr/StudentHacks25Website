@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <button 
         onClick={toggleMenu}
-        className="fixed top-4 right-4 z-50 p-2 rounded-md bg-transparent backdrop-blur-3xl outline-secondary outline-2 md:hidden"
+        className="fixed top-4 right-4 z-50 p-2 rounded-md bg-transparent backdrop-blur-3xl outline-primary outline-2 md:hidden"
         aria-label="Toggle menu"
       >
         {isMenuOpen ? (

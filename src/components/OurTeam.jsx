@@ -45,19 +45,19 @@ const OurTeam = () => {
           <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-4">
             <span className="animate-pulse">
-              [ACCESSING PERSONNEL DATABASE...]
+              [ACCESSING TEAM DATABASE...]
             </span>
           </p>
         </div>
 
         {/* Terminal Window */}
-        <div className="max-w-4xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
+        <div className="max-w-5xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
           data-visible={visible}>
           <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
             {/* Terminal Header */}
             <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
-              <div className="text-primary font-mono text-xs">
-                secure-shell@unics-network:~/Personnel
+              <div className="text-primary font-mono text-xs text-left">
+                secure-shell@unics-network:~/team
               </div>
               <div className="flex gap-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -68,13 +68,13 @@ const OurTeam = () => {
 
             {/* Terminal Content */}
             <div className="p-3 sm:p-5 bg-black font-mono text-sm text-primary/90 max-h-[600px] overflow-y-auto">
-              <div className="mb-2">$ accessing personnel matrix... <span className="text-primary">CONNECTED</span></div>
-              <div className="mb-4">$ executing query: <span className="text-white">get --active-personnel --format=detailed</span></div>
+              <div className="mb-2">$ accessing team matrix... <span className="text-primary">CONNECTED</span></div>
+              <div className="mb-4">$ executing query: <span className="text-white">get --active-team --format=detailed</span></div>
 
-              {/* Command Output - Personnel */}
+              {/* Command Output */}
               <div className="mb-6">
                 <div className="text-yellow-400 mb-3">
-                  [PERSONNEL DATABASE] - RECORDS FOUND {Object.values(teamsByDepartment).flat().length}
+                  [TEAM DATABASE] - RECORDS FOUND {Object.values(teamsByDepartment).flat().length}
                 </div>
               </div>
 
@@ -174,6 +174,8 @@ const OurTeam = () => {
                   </div>
                 </div>
               ))}
+
+              
 
               <div className="mt-6">
                 <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>

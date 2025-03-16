@@ -131,7 +131,7 @@ const Sponsors = () => {
     <section
       id="Sponsors"
       ref={sponsorsRef}
-      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-4 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(74,222,128,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(74,222,128,0.1)_1px,transparent_1px)]"></div>
@@ -155,13 +155,13 @@ const Sponsors = () => {
           </p>
           
           {/* Terminal Window */}
-          <div className="max-w-4xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
+          <div className="max-w-5xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
                data-visible={visible}>
             <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
-                <div className="text-primary font-mono text-xs">
-                  secure-shell@unics-network:~/sponsors
+                <div className="text-primary font-mono text-xs text-left">
+                  terminal@unics-network:~/sponsors
                 </div>
                 <div className="flex gap-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -264,6 +264,8 @@ const Sponsors = () => {
             </div>
           </div>
         </div>
+
+        
         
         {/* Become a Sponsor Section with futuristic terminal style 
         

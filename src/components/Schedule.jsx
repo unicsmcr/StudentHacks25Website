@@ -120,7 +120,7 @@ const Schedule = () => {
     <section
       id="Schedule"
       ref={scheduleRef}
-      className="pt-30 pb-36 px-8 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="pt-30 pb-36 px-4 bg-gradient-to-r from-black to-black-500 text-primary min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       {/* Grid background and effects (same as Sponsors) */}
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(93,202,230,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(93,202,230,0.1)_1px,transparent_1px)]"></div>
@@ -138,20 +138,29 @@ const Schedule = () => {
             <p className="text-xl text-gray-200 leading-relaxed max-w-5xl mx-auto mb-8">
               Our hackathons aren't just 24 hours of straight coding - there'll be many workshops, mini-games and events for everyone to have fun and learn!
             </p>
+            {/* Disclaimer Banner */}
+            <div className="bg-yellow-500/20 border border-yellow-500/50 rounded-md py-2 px-3 mb-6 mx-auto max-w-4xl">
+              <p className="text-yellow-400 font-mono text-xs sm:text-sm flex items-center justify-center">
+                <span className="mr-2">⚠️</span>
+                <span className="uppercase font-bold mr-1">NOTICE:</span> This schedule is provisional and subject to change. Final schedule will be updated soon.
+              </p>
+            </div>
             <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           </div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-4">
             <span className="animate-pulse">[ACCESSING EVENT-SCHEDULE DATABASE...]</span>
           </p>
+
+          
           
           {/* Terminal Window */}
-          <div className="mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
+          <div className="mx-auto w-full max-w-5xl transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
                data-visible={visible}>
             <div className="bg-black border border-primary/50 rounded-md overflow-hidden shadow-lg shadow-primary/20">
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
-                <div className="text-primary font-mono text-xs">
-                secure-shell@unics-network:~/event-schedule
+                <div className="text-primary font-mono text-xs text-left">
+                terminal@unics-network:~/schedule
                 </div>
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -170,6 +179,9 @@ const Schedule = () => {
                 <div className="mb-6">
                   <div className="text-yellow-400 mb-3">
                     [EVENT-SCHEDULE DATABASE] - RECORDS FOUND: {scheduleData.days.length}
+                  </div>
+                  <div className="text-red-400 mb-3">
+                    [SYSTEM_MSG] PROVISIONAL DATA - SUBJECT TO CHANGE
                   </div>
                   
                   {/* Loading animation for terminal outputs */}
@@ -249,6 +261,8 @@ const Schedule = () => {
                       ))}
                     </div>
                   )}
+
+                  
                   
                   {/* Terminal cursor blinking after outputs */}
                   {terminalReady && (
