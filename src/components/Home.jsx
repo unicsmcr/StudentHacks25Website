@@ -4,13 +4,14 @@ import { FaCalendarAlt, FaUser } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
 import logo from '../assets/logoTransparent.png';
 
+const fullText = "$ establishing connection to temporal network...\n$ calculating time until event horizon...";
+const typingSpeed = 30;
+
 const Home = () => {
   const [terminalReady, setTerminalReady] = useState(false);
   const [countdownVisible, setCountdownVisible] = useState(false);
   const [typingComplete, setTypingComplete] = useState(false);
   const [terminalText, setTerminalText] = useState("");
-  const fullText = "$ establishing connection to temporal network...\n$ calculating time until event horizon...";
-  const typingSpeed = 30;
   const terminalRef = useRef(null);
 
   const calculateTimeLeft = () => {
@@ -38,7 +39,6 @@ const Home = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   // Terminal typing effect
-  // Terminal typing effect
 useEffect(() => {
   let i = 0;
   const typingInterval = setInterval(() => {
@@ -48,12 +48,8 @@ useEffect(() => {
     } else {
       clearInterval(typingInterval);
       setTypingComplete(true);
-      
-      // After typing is complete, show the terminal
       setTimeout(() => {
         setTerminalReady(true);
-        
-        // Then show the countdown
         setTimeout(() => {
           setCountdownVisible(true);
         }, 400);

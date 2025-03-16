@@ -141,7 +141,7 @@ const OurTeam = () => {
       </div>
       
       {/* Add styles for clip path and animations */}
-      <style jsx>{`
+      <style jsx="true">{`
         .clip-path-hex {
           clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
         }

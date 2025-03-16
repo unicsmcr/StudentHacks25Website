@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.14.0",
     "@headlessui/react": "^2.2.0",
     "@mui/material": "^6.4.7",
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.0.14",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "framer-motion": "^12.4.9",
@@ -37,7 +37,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "tailwindcss": "^4.0.9",
+    "tailwindcss": "^4.0.14",
     "vite": "^6.2.0"
   }
 }

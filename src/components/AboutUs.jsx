@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { useGlitch } from 'react-powerglitch';
 import events from '../data/past_events.json';
 
-
 const AboutUs = () => {
   const [selectedYear, setSelectedYear] = useState(null);
   const [visible, setVisible] = useState(true);
@@ -15,7 +14,6 @@ const AboutUs = () => {
     playMode: "always",
     duration: 3950,
   }); 
-
 
   // Handle keyboard press (ESC key)
   useEffect(() => {
@@ -253,7 +251,7 @@ const AboutUs = () => {
       </div>
       
       {/* Add global CSS keyframes for fadeIn animation */}
-      <style jsx global>{`
+      <style jsx="true" global="true">{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(5px); }
           to { opacity: 1; transform: translateY(0); }
