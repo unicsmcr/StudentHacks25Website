@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useGlitch } from 'react-powerglitch';
-
-
+import futuristicSponsors from "../data/sponsors.json";
 
 const Sponsors = () => {
   // For animation of sponsors appearing
@@ -33,44 +32,6 @@ const Sponsors = () => {
     },
   });
   
-  // Enhanced future corporate data for sponsors
-  const futuristicSponsors = [
-    {
-      id: 1,
-      name: "REPLY",
-      code: "RPL-9240",
-      sector: "QUANTUM SYSTEMS",
-      year: "EST. 2142",
-      description: "Neural Interface Solutions",
-      color: "from-green-400 to-blue-500",
-      shape: "circle",
-      link: "#"
-    },
-    {
-      id: 2,
-      name: "FIGMA",
-      code: "FGM-7721",
-      sector: "NEURAL DESIGN",
-      year: "EST. 2089",
-      description: "Reality Augmentation Systems",
-      color: "from-yellow-400 to-orange-500",
-      shape: "hexagon",
-      logo: "/vite.svg",
-      link: "#"
-    },
-    {
-      id: 3,
-      name: "NETCRAFT",
-      code: "NCT-6310",
-      sector: "CYBER DEFENSE",
-      year: "EST. 2118",
-      description: "Network Protection Arrays",
-      color: "from-gray-300 to-gray-400",
-      shape: "triangle",
-      logo: "/images/net.png", // this logo is a place holder, and not a real sponsor
-      link: "#"
-    }
-  ];
   
   // Intersection observer to trigger animations when scrolled into view
   // useEffect(() => {
@@ -174,8 +135,6 @@ const Sponsors = () => {
     >
       
       <div className="absolute inset-0 opacity-10 bg-[size:50px_50px] bg-[image:linear-gradient(to_right,rgba(74,222,128,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(74,222,128,0.1)_1px,transparent_1px)]"></div>
-      
-      
       <div className="absolute inset-0 pointer-events-none opacity-5 bg-[image:linear-gradient(transparent_0%,rgba(74,222,128,0.05)_50%,transparent_100%)] bg-[size:100%_4px]"></div>
       
       <div className="max-w-7xl mx-auto w-full space-y-16 relative z-10">
@@ -189,10 +148,10 @@ const Sponsors = () => {
               SPONSORS
             </h2>
            
-            <div className="text-xs tracking-widest text-accent2 uppercase mb-2">Corporate Allies • Data: 09.03.2184</div>
+            <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           </div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-6">
-            <span className="animate-pulse">[CONNECTING TO QUANTUM SECURE NETWORK...]</span>
+            <span className="animate-pulse">[ACCESSING SPONSORS DATABASE...]</span>
           </p>
           
           {/* Terminal Window */}
@@ -202,9 +161,9 @@ const Sponsors = () => {
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
                 <div className="text-primary font-mono text-xs">
-                  secure-shell@quantum-network:~/sponsors
+                  secure-shell@unics-network:~/sponsors
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex gap-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -212,27 +171,18 @@ const Sponsors = () => {
               </div>
               
               {/* Terminal Content */}
-              <div className="p-5 bg-black font-mono text-sm text-primary/90 h-[500px] overflow-y-auto">
+              <div className="p-5 bg-black font-mono text-sm text-primary/90 h-full overflow-y-auto">
                 {/* Initial Connection Sequence */}
-                <div className="mb-2">$ establishing secure connection to quantum network...</div>
-                <div className="mb-2">$ running encryption protocols... <span className="text-primary">OK</span></div>
-                <div className="mb-2">$ verifying credentials... <span className="text-primary">VERIFIED</span></div>
-                <div className="mb-2">$ initializing data retrieval module... <span className="text-primary">READY</span></div>
+                <div className="mb-2">$ accessing sponsors matrix... <span className="text-primary">CONNECTED</span></div>
                 <div className="mb-4">$ executing query: <span className="text-white">get --all-sponsors --format=detail</span></div>
                 
                 {/* Command Output - Sponsors */}
                 <div className="mb-6">
                   <div className="text-yellow-400 mb-1">
-                    [QUANTUM SECURE DATABASE] - SPONSOR RECORDS FOUND: {futuristicSponsors.length}
+                    [SPONSORS DATABASE] - SPONSOR RECORDS FOUND: {futuristicSponsors.length}
                   </div>
                   
-                  <div className="px-2 py-1 border-t border-b border-green-400/20 bg-green-400/5 mb-4">
-                    <div className="grid grid-cols-3 gap-2 text-xs text-secondary/70">
-                      <div>CORP_ID</div>
-                      <div>NAME</div>
-                      <div>SECTOR</div>
-                    </div>
-                  </div>
+                  
                   
                   {/* Loading animation for terminal outputs */}
                   {!terminalReady && (
@@ -252,7 +202,7 @@ const Sponsors = () => {
                   >
                     <div className="flex items-center mb-1">
                       <span className="text-gray-500 mr-2">{">"}</span>
-                      <div className="text-yellow-400 font-bold">
+                      <div className="text-accent2 font-bold">
                         {sponsor.code}
                       </div>
                     </div>
@@ -276,30 +226,17 @@ const Sponsors = () => {
                             </div>
                           )}
                         </div>
-                        <div className="text-white text-lg font-bold">
+                        {/* <div className="text-white text-lg font-bold">
                           {sponsor.name}
-                        </div>
+                        </div> */}
                       </div>
                       
                       {/* Terminal readout style information */}
-                      <div className="border border-primary/10 bg-primary/5 rounded p-3 mb-3">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-primary/80 mb-2">
-                          <div>
-                            <span className="text-gray-500">SECTOR:</span> {sponsor.sector}
-                          </div>
-                          <div>
-                            <span className="text-gray-500">ESTABLISHED:</span> {sponsor.year}
-                          </div>
-                        </div>
-                        
-                        <div className="text-gray-300 text-sm border-t border-primary/10 pt-2 mt-2">
-                          {sponsor.description}
-                        </div>
-                      </div>
-                      
-                      <div className="flex justify-between text-xs text-gray-500 mt-2">
-                        <div>
-                          STATUS: <span className="text-primary">ACTIVE</span>
+                      <div className="border border-primary/10 bg-primary/5 rounded p-1 mb-3">
+                        <div className="grid grid-cols-1 gap-2 text-xs text-primary/80">
+                        <div className="absolute top-2 right-2 flex items-center">
+                          <div className="w-2 h-2 rounded-full bg-green-400 mr-1 animate-pulse"></div>
+                          <span className="text-xs text-green-400/70 font-mono">ACTIVE</span>
                         </div>
                         <a 
                           href={sponsor.link} 
@@ -307,14 +244,18 @@ const Sponsors = () => {
                         >
                           access://profile/{sponsor.code.toLowerCase()}
                         </a>
+                        </div>
+                        
                       </div>
+                      
+                      
                     </div>
                   </div>
                 ))}
                   
                   {/* Terminal cursor blinking after outputs */}
                   {terminalReady && (
-                    <div className="mt-6">
+                    <div className="mt-6 -mb-4">
                       <div className="text-gray-500">$ <span className="animate-pulse">_</span></div>
                     </div>
                   )}
@@ -368,35 +309,6 @@ const Sponsors = () => {
             </div>
           </div>
         </div> */}
-
-        
-
-        {/* Futuristic background elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Horizontal pulse lines */}
-          <div className="absolute left-0 top-1/3 w-full h-px bg-gradient-to-r from-transparent via-green-400/20 to-transparent animate-pulse"></div>
-          <div className="absolute right-0 top-2/3 w-full h-px bg-gradient-to-r from-transparent via-green-400/20 to-transparent animate-pulse"></div>
-          
-          {/* Vertical pulse lines */}
-          <div className="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-400/20 to-transparent animate-pulse"></div>
-          <div className="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-400/20 to-transparent animate-pulse"></div>
-          
-          {/* Data stream - using Tailwind animations */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-0 h-full w-1 bg-green-400/20 overflow-hidden left-[20%]">
-              <div className="h-20 w-full bg-green-400/50 animate-[ping_4s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-green-400/20 overflow-hidden left-[40%]">
-              <div className="h-20 w-full bg-green-400/50 animate-[ping_5s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-green-400/20 overflow-hidden left-[60%]">
-              <div className="h-20 w-full bg-green-400/50 animate-[ping_6s_infinite]"></div>
-            </div>
-            <div className="absolute top-0 h-full w-1 bg-green-400/20 overflow-hidden left-[80%]">
-              <div className="h-20 w-full bg-green-400/50 animate-[ping_7s_infinite]"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

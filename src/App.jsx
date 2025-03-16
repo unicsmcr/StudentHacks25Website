@@ -92,7 +92,7 @@ const App = () => {
 
 
   return (
-    <div class="container" className=" back">
+    <div className="back">
       <BackgroundEffects /> {/* Ensures the background effects are displayed over all components */}
       <Navbar />
       <Particles

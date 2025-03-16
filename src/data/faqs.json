@@ -1,0 +1,38 @@
+[
+    {
+      "question": "What is a hackathon and what can I expect from it?",
+      "answer": "A hackathon is a collaborative event where people come together to solve problems using technology. Work in teams to brainstorm, design, and realise a project over 24 hours, with each creation presented to a panel of judges. Prizes are awarded to the winning teams and mini-events / workshops run throughout. Hackathons are a great way to challenge yourself, learn new skills, and have a great time with new people!"
+    },
+    {
+      "question": "What should I bring to the hackathon?",
+      "answer": "Bring your laptop, charger, any hardware you might need, a valid physical government-issued photo ID (driving license, brp, passport, etc), and any other tools or resources you would like. We also recommend bringing a change of clothes, toiletries, and anything else to stay comfortable during the event. Food and drink will be provided, but you are welcome to bring or buy your own if you prefer."
+    },
+    {
+      "question": "How do I register for the hackathon?",
+      "answer": "We'll have a link to the registration form available on this website."
+    },
+    {
+      "question": "What is the eligibility criteria for participants?",
+      "answer": "You need to be an Undergraduate/Postgraduate at the University of Manchester and 18+. We encourage all levels of ability to have a go!"
+    },
+    {
+      "question": "How does the competition work",
+      "answer": "There will be a set of challenges or themes available for you to base your project around. Each challenge has its own set of rules, judging criteria, and expected outcome/delivery provided by the challenge setter (sponsors, societies, the organizing team, etc.)"
+    },
+    {
+      "question": "How are teams formed?",
+      "answer": "If you already have a team, you'll be able to register with them when the form opens. If not, there will be plenty of opportunity to join a team at the beginning of the event - hackathons are about meeting new people too! All teams must be 1-4 members."
+    },
+    {
+        "question": "What are the prizes and awards for winners?",
+        "answer": "We have an awesome line-up of prizes for the winners of various challenges. We'll reveal the prizes before the hackathon, so stay tuned!"
+    },
+    {
+        "question": "Will food and drink be provided for participants?",
+        "answer": "We'll provide everyone with main meals, a midnight snack (covering all dietary requirements), as well as snacks and drinks throughout the event. A full menu will be available before the hackathon."
+    },
+    {
+        "question": "Can I participate in multiple hackathon challenges?",
+        "answer": "Of course you can! Just keep in mind that you have a limited amount of time and resources, so plan wisely!"
+    }
+  ]

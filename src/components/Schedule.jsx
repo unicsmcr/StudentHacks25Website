@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { SiTruenas } from 'react-icons/si';
 import { useGlitch } from 'react-powerglitch';
+import scheduleData from '../data/schedule.json';
 
 const Schedule = () => {
   // For animation of schedule appearing
@@ -31,55 +32,6 @@ const Schedule = () => {
       amplitudeY: 0.2,
     },
   });
-
-  const scheduleData = {
-    "venueChange": {
-      "title": "! Venue Change",
-      "description": "We are required to evacuate UOM Nancy Rothwell Building from 09:00pm - 08:00am overnight. To compensate for this, we have booked room in the Pendulum Hotel for hacking to continue.",
-      "contactEmail": "hackathons@unicsmcr.com"
-    },
-    "days": [
-      {
-        "date": "Saturday",
-        "dayOfWeek": "5th April",
-        "events": [
-          { "time": "09:00 AM", "title": "Registration Opens", "description": "Please have your QR code ready!", "status": "completed" },
-          { "time": "10:30 AM", "title": "Registration Closes", "status": "completed" },
-          { "time": "11:00 AM", "title": "Opening Ceremony", "status":"ongoing" },
-          { "time": "12:00 PM", "title": "Hacking Starts" },
-          { "time": "12:30 PM", "title": "Lunch" },
-          { "time": "01:30 PM - 02:30 PM", "title": "Workshop 1 (Jetbrains)", "description": "Learn how to use Jetbrains IDEs to improve your workflow", "status": "upcoming" },
-          { "time": "03:00 PM - 04:00 PM", "title": "Workshop 2 (Reply)" },
-          { "time": "04:00 PM - 06:00 PM", "title": "Workshop 3 (Fanvue AI)" },
-          { "time": "06:00 PM", "title": "Dinner" },
-          { "time": "07:00 PM", "title": "Cup Stacking Event" },
-          { "time": "08:00 PM", "title": "!LIGHT Event", "status": "cancelled" },
-          { "time": "09:00 PM", "title": "Venue Change (Pendulum Hotel)" },
-          { "time": "11:00 PM", "title": "Movie Screening" }
-        ]
-      },
-      {
-        "date": "Sunday",
-        "dayOfWeek": "6th April", 
-        "events": [
-          { "time": "12:00 AM", "title": "Midnight Snack" },
-          { "time": "02:00 AM", "title": "Minecraft Minigames" },
-          { "time": "05:00 AM", "title": "Board Games" },
-          { "time": "08:00 AM", "title": "Venue Change (UOM Nancy Rothwell Building)" },
-          { "time": "08:30 AM", "title": "Breakfast" },
-          { "time": "10:00 AM", "title": "Submissions Open" },
-          { "time": "11:00 AM", "title": "Remembrance Silence" },
-          { "time": "12:00 PM", "title": "Submission Closes" },
-          { "time": "12:30 PM", "title": "Lunch" },
-          { "time": "12:30 PM - 02:45 PM", "title": "Judging" },
-          { "time": "01:00 PM", "title": "Human Hungry Hippos" },
-          { "time": "03:30 PM", "title": "Project Showcase" },
-          { "time": "04:30 PM", "title": "Closing Ceremony" },
-          { "time": "05:00 PM", "title": "Event Ends" }
-        ]
-      }
-    ]
-  };
 
   // // Intersection observer to trigger animations when scrolled into view
   // useEffect(() => {
@@ -186,10 +138,10 @@ const Schedule = () => {
             <p className="text-xl text-gray-200 leading-relaxed max-w-5xl mx-auto mb-8">
               Our hackathons aren't just 24 hours of straight coding - there'll be many workshops, mini-games and events for everyone to have fun and learn!
             </p>
-            <div className="text-xs tracking-widest text-accent2 uppercase mb-2">Event Timeline • Data: 04.03.2184</div>
+            <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           </div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-4">
-            <span className="animate-pulse">[ACCESSING TEMPORAL DATABASE...]</span>
+            <span className="animate-pulse">[ACCESSING EVENT-SCHEDULE DATABASE...]</span>
           </p>
           
           {/* Terminal Window */}
@@ -199,7 +151,7 @@ const Schedule = () => {
               {/* Terminal Header */}
               <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
                 <div className="text-primary font-mono text-xs">
-                  timeline@quantum-network:~/event-schedule
+                secure-shell@unics-network:~/event-schedule
                 </div>
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -217,7 +169,7 @@ const Schedule = () => {
                 {/* Command Output - Schedule */}
                 <div className="mb-6">
                   <div className="text-yellow-400 mb-3">
-                    [QUANTUM TEMPORAL DATABASE] - EVENT DAYS FOUND: {scheduleData.days.length}
+                    [EVENT-SCHEDULE DATABASE] - EVENT DAYS FOUND: {scheduleData.days.length}
                   </div>
                   
                   {/* Loading animation for terminal outputs */}

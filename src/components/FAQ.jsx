@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useGlitch } from "react-powerglitch";
-
-const questions = [
-  { question: "Can I take part in the hackathon?", answer: "If you are 18+ and an Undergraduate or Postgraduate at the University of Manchester, then absolutely! We encourage all levels of ability to have a go." },
-  { question: "How do I register for the hackathon?", answer: "You can register for the hackathon by filling out the form on our website." },
-  { question: "When and where will the hackathon take place?", answer: "The hackathon will take place on the 5th and 6th April weekend, running overnight. We'll be in person, in the Nancy Rothwell building." },
-  { question: "What do I actually do?", answer: "You'll be working in teams of up to 4 people to create a project! The main theme will be revealed on the day, and there will be additional challenges available from our sponsors with each one having its own set of rules, judging criteria, and prizes." },
-  { question: "How are teams formed, and can I participate as an individual?", answer: "We encourage all participants to have a team (4 members max). If you are registering as an individual, you’ll have the opportunity to join a team during the event. Hackathons are about meeting new people too!"},
-  { question: "What should I bring to the hackathon?", answer: "Bring your laptop, charger, any hardware you might need, a valid physical government-issued photo ID (driving license, brp, passport, etc), and any other tools or resources you would like. We also recommend bringing a change of clothes, toiletries, and anything else to stay comfortable during the event. Food and drink will be provided, but you are welcome to bring or buy your own if you prefer." },
-];
+import questions from "../data/faqs.json";
 
 const FAQ = () => {
   const [collapsedPanels, setCollapsedPanels] = useState(questions.map(() => false));
@@ -59,11 +51,11 @@ const FAQ = () => {
       
       <div className="max-w-5xl mx-auto w-full relative z-10 text-center">
         <h2 ref={glitchEffect.ref} className="text-5xl font-bold mb-6 font-title">
-          FAQs
+          FAQS
         </h2>
-        <div className="text-xs tracking-widest text-accent2 uppercase mb-2">Event Timeline • Data: 04.03.2184</div>
+        <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-4">
-            <span className="animate-pulse">[ACCESSING TEMPORAL DATABASE...]</span>
+            <span className="animate-pulse">[ACCESSING FAQS DATABASE...]</span>
           </p>
         {/* Terminal Window */}
         <div className="max-w-4xl mx-auto w-full transition-all duration-500 opacity-0 translate-y-5 data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 delay-300"
@@ -72,7 +64,7 @@ const FAQ = () => {
             {/* Terminal Header */}
             <div className="bg-black border-b border-primary/30 py-2 px-4 flex justify-between items-center">
               <div className="text-primary font-mono text-xs">
-                secure-shell@quantum-network:~/FAQs
+                secure-shell@unics-network:~/FAQs
               </div>
               <div className="flex gap-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -89,7 +81,7 @@ const FAQ = () => {
               {/* Command Output - Schedule */}
               <div className="mb-6">
                 <div className="text-yellow-400 mb-3">
-                  [QUANTUM TEMPORAL DATABASE] - QUESTIONS FOUND {questions.length}
+                  [FAQS DATABASE] - QUESTIONS FOUND {questions.length}
                 </div>
               </div>
               
@@ -101,7 +93,7 @@ const FAQ = () => {
                   >
                     <span className="text-gray-500 mr-2">{"> "}</span>
                     <span className="text-secondary text-left w-full font-bold flex-grow p-1 transition-all duration-300 select-none">
-                      <span className="text-primary/70">$ query --question </span>
+                      <span className="text-primary/70">$ query </span>
                       <span className="text-accent2 font-bold">"{item.question}"</span>
                     </span>
                     <div className={`text-primary transition-transform duration-300 ${collapsedPanels[index] ? 'rotate-180' : ''}`}>

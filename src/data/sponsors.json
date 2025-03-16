@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "REPLY",
+      "code": "RPL-9240",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "name": "FIGMA",
+      "code": "FGM-7721",
+      "logo": "/vite.svg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "name": "NETCRAFT",
+      "code": "NCT-6310",
+      "logo": "/images/net.png",
+      "link": "#"
+    }
+]
