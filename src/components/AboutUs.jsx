@@ -29,8 +29,7 @@ const AboutUs = () => {
     };
   }, []);
 
-  // Images and slider settings remain the same
-  //all images in images/AboutImages
+  // Images remain the same
   const images = [
     '/images/AboutImages/HackathonImg1.jpg',
     '/images/AboutImages/HackathonImg2.jpg',
@@ -40,24 +39,31 @@ const AboutUs = () => {
     '/images/AboutImages/HackathonImg6.jpg',
   ];
 
-  var settings = {
+  // Enhanced slider settings for the overlapping gallery effect
+  const settings = {
+    className: "center",
+    centerMode: true,
     infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    focusOnSelect: true,
+    dots: true,
+    arrows: false,
+    swipeToSlide: true,
     responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "40px",
+        }
+      },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          centerPadding: "50px",
         }
       }
     ]
@@ -96,11 +102,24 @@ const AboutUs = () => {
           </p>
         </div>
   
-        <div className="slider-container w-3/4 md:w-1/4 align-middle mx-auto">
+        {/* Enhanced Gallery Component with 3:2 aspect ratio */}
+        <div className="slider-container w-full md:w-5/6 lg:w-3/4 mx-auto">
           <Slider {...settings}>
             {images.map((src, index) => (
-              <div key={index}>
-                <img src={src} alt={`placeholder ${index + 1}`} className="cursor-pointer w-full rounded-lg" />
+              <div key={index} className="px-2">
+                <div className="relative transition-all duration-300 transform hover:scale-105">
+                  <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+                    <img 
+                      src={src} 
+                      alt={`Hackathon ${index + 1}`} 
+                      className="w-full h-full object-cover cursor-pointer"
+                      style={{ aspectRatio: '3/2' }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 rounded-lg shadow-lg" style={{
+                    boxShadow: "0 0 15px rgba(93, 202, 230, 0.3)"
+                  }}></div>
+                </div>
               </div>
             ))}
           </Slider>
@@ -210,7 +229,7 @@ const AboutUs = () => {
                               {subEvent.link && (
                                 <div className="text-xs mt-1 flex items-center">
                                   <div className="font-bold text-accent2/80 ">{subEvent.description}</div>
-                                  </div>
+                                </div>
                               )}
                               
                               {subEvent.link && (
@@ -253,11 +272,82 @@ const AboutUs = () => {
         </div>
       </div>
       
-      {/* Add global CSS keyframes for fadeIn animation */}
+      {/* Add global CSS keyframes for fadeIn animation and custom gallery styling */}
       <style jsx="true" global="true">{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(5px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom styling for the gallery */
+        .slick-slide {
+          transition: all 0.3s ease;
+          transform: scale(0.85);
+          opacity: 0.6;
+          filter: blur(1px);
+        }
+        
+        .slick-center {
+          transform: scale(1);
+          opacity: 1;
+          z-index: 10;
+          filter: blur(0);
+        }
+        
+        .slick-slide:not(.slick-center):hover {
+          opacity: 0.8;
+          transform: scale(0.9);
+          filter: blur(0.5px);
+        }
+        
+        /* Ensure images maintain 3:2 aspect ratio */
+        .aspect-w-3 {
+          position: relative;
+          padding-bottom: 66.666%; /* 2/3 = 66.666% */
+        }
+        
+        .aspect-w-3 > img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          object-fit: cover;
+        }
+        
+        /* Styling for slider dots */
+        .slick-dots li button:before {
+          color: rgba(93, 202, 230, 0.5);
+        }
+        
+        .slick-dots li.slick-active button:before {
+          color: rgba(93, 202, 230, 1);
+        }
+        
+        /* Style the slider arrows */
+        .slick-prev, .slick-next {
+          font-size: 0;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          display: block;
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          transform: translate(0, -50%);
+          cursor: pointer;
+          color: transparent;
+          border: none;
+          outline: none;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 50%;
+          z-index: 20;
+        }
+        
+        .slick-prev:before, .slick-next:before {
+          color: rgba(93, 202, 230, 0.8);
         }
       `}</style>
     </section>
