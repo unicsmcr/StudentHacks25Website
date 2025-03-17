@@ -224,7 +224,7 @@ const Home = () => {
           data-visible={countdownVisible}
         >
           <button className="mt-6 bg-transparent backdrop-blur-sm border-2 border-accent2/50 text-accent2 py-2 px-8 rounded-full hover:bg-accent2/10 transition duration-300 relative group overflow-hidden">
-            <span className="relative z-10">APPLY NOW</span>
+            <span className="relative z-10">Applications open at 6 PM on March 17, 2025</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent2/0 via-accent2/20 to-accent2/0 -translate-x-full group-hover:translate-x-full duration-700 transition-transform"></div>
           </button>
 
