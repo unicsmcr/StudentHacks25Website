@@ -30,10 +30,14 @@ const AboutUs = () => {
   }, []);
 
   // Images and slider settings remain the same
+  //all images in images/AboutImages
   const images = [
-    "https://picsum.photos/seed/1/2000/1000",
-    "https://picsum.photos/seed/2/2000/1000",
-    "https://picsum.photos/seed/3/2000/1000"
+    '/images/AboutImages/HackathonImg1.jpg',
+    '/images/AboutImages/HackathonImg2.jpg',
+    '/images/AboutImages/HackathonImg3.jpg',
+    '/images/AboutImages/HackathonImg4.jpg',
+    '/images/AboutImages/HackathonImg5.jpg',
+    '/images/AboutImages/HackathonImg6.jpg',
   ];
 
   var settings = {
@@ -92,11 +96,11 @@ const AboutUs = () => {
           </p>
         </div>
   
-        <div className="slider-container w-full md:w-3/4 lg:w-1/2 align-middle mx-auto">
+        <div className="slider-container w-3/4 md:w-1/4 align-middle mx-auto">
           <Slider {...settings}>
             {images.map((src, index) => (
               <div key={index}>
-                <img src={src} alt={`placeholder ${index + 1}`} className="cursor-pointer w-full h-auto rounded-lg" />
+                <img src={src} alt={`placeholder ${index + 1}`} className="cursor-pointer w-full rounded-lg" />
               </div>
             ))}
           </Slider>
