@@ -1,2 +1,1 @@
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/) for styling, pretty straightforward to use and it means there's less CSS stuff to mess with. Documentation is useful too.
+Used React/Vite.
