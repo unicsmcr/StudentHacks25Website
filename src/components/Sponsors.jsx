@@ -73,11 +73,11 @@ const Sponsors = () => {
     // If a logo path is provided, use the image
     if (sponsor.logo) {
       return (
-        <div className="w-16 h-16 flex items-center justify-center mr-5 overflow-hidden">
+        <div className="w-16 h-16 flex items-center justify-center mr-5 overflow-hidden ">
           <img 
             src={sponsor.logo} 
-            alt={`${sponsor.name} logo`} 
-            className="w-full h-full object-contain"
+            alt={`${sponsor.name}`} 
+            className="w-full h-full object-contain "
           />
         </div>
       );
@@ -213,12 +213,22 @@ const Sponsors = () => {
                         <div className="mb-3">
                           {/* Logo rendering function - use the larger size as previously suggested */}
                           {sponsor.logo ? (
-                            <div className="w-24 h-24 flex items-center justify-center overflow-hidden ">
-                              <img 
-                                src={sponsor.logo} 
-                                alt={`${sponsor.name} logo`} 
-                                className="w-full h-full object-contain"
-                              />
+                            <div className="w-xs h-28 flex items-center justify-center overflow-hidden relative">
+                              {/* Logo container with solid light background - wider */}
+                              <div className="relative z-10 w-60 h-20 flex items-center justify-center rounded-lg bg-gray-200/90">
+                                <img 
+                                  src={sponsor.logo} 
+                                  alt={`${sponsor.name} logo`} 
+                                  className="w-4/5 h-4/5 object-contain"
+                                />
+                              </div>
+                              
+                              {/* Corner accents */}
+                              <div className="absolute top-0 left-6 w-3 h-3 border-t-2 border-l-2 border-primary"></div>
+                              <div className="absolute top-0 right-6 w-3 h-3 border-t-2 border-r-2 border-primary"></div>
+                              <div className="absolute bottom-0 left-6 w-3 h-3 border-b-2 border-l-2 border-primary"></div>
+                              <div className="absolute bottom-0 right-6 w-3 h-3 border-b-2 border-r-2 border-primary"></div>
+                              
                             </div>
                           ) : (
                             <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${sponsor.color} flex items-center justify-center`}>
@@ -239,7 +249,9 @@ const Sponsors = () => {
                           <span className="text-xs text-green-400/70 font-mono">ACTIVE</span>
                         </div>
                         <a 
-                          href={sponsor.link} 
+                          href={sponsor.link}
+                          target="_blank"
+                          rel="noopener noreferrer" 
                           className="text-blue-400 hover:underline hover:text-blue-300"
                         >
                           access://profile/{sponsor.code.toLowerCase()}

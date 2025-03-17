@@ -146,3 +146,12 @@ button:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #2b3e50, #3a5268);
 }
+
+@keyframes scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 100px; }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}

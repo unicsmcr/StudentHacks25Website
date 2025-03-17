@@ -1,22 +1,16 @@
 [
     {
       "id": 1,
-      "name": "REPLY",
-      "code": "RPL-9240",
-      "link": "#"
+      "name": "Ping Proxies",
+      "code": "PPX-1234",
+      "logo": "/images/Sponsors/PingLogo.webp",
+      "link": "https://pingproxies.com/"
     },
     {
       "id": 2,
-      "name": "FIGMA",
-      "code": "FGM-7721",
-      "logo": "/vite.svg",
-      "link": "#"
-    },
-    {
-      "id": 3,
-      "name": "NETCRAFT",
-      "code": "NCT-6310",
-      "logo": "/images/sponsors/net.png",
-      "link": "#"
+      "name": "Port Swigger",
+      "code": "PSG-5678",
+      "logo": "/images/Sponsors/PortSwigger.png",
+      "link": "https://portswigger.net/"
     }
 ]

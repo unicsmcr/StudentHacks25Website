@@ -100,7 +100,7 @@ const OurTeam = () => {
                             className="flex flex-row place-items-center bg-[#0d1e29] w-36 xs:w-40 sm:w-56 md:w-64 h-20 xs:h-24 sm:h-28 md:h-32 rounded-md shadow-lg overflow-hidden relative group"
                           >
                             <div className="relative w-16 xs:w-20 sm:w-24 md:w-28 h-16 xs:h-20 sm:h-24 md:h-28 ml-1 sm:ml-2 flex items-center justify-center">
-                              <div className="absolute inset-0 bg-accent2/15 clip-path-hex animate-pulse"></div>
+                              <div className="absolute inset-0 bg-accent2/20 clip-path-hex animate-pulse"></div>
                               <div className="absolute inset-0 clip-path-hex border border-accent2/30"></div>
                               {/* Image */}
                               <div className="w-12 xs:w-16 sm:w-20 md:w-24 h-12 xs:h-16 sm:h-20 md:h-24 clip-path-hex overflow-hidden">
