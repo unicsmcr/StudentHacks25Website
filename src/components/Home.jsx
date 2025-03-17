@@ -223,8 +223,8 @@ const Home = () => {
           className="space-y-6 transition-all duration-700 delay-1000 opacity-0 data-[visible=true]:opacity-100"
           data-visible={countdownVisible}
         >
-          <button className="mt-6 bg-transparent backdrop-blur-sm border-2 border-accent2/50 text-accent2 py-4 px-16 rounded-full hover:bg-accent2/10 transition duration-300 relative group overflow-hidden" onClick={() => window.open('https://forms.office.com/e/efaYZq94yt', '_blank')}>
-            <span className="relative z-10 text-3xl">APPLY NOW</span>
+          <button className="mt-6 bg-transparent backdrop-blur-sm border-2 border-accent2/50 text-accent2 py-2 px-6 rounded-full hover:bg-accent2/10 transition duration-300 relative group overflow-hidden" onClick={() => window.open('https://forms.office.com/e/efaYZq94yt', '_blank')}>
+            <span className="relative z-10 text-xl font-title font-bold">APPLY NOW</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent2/0 via-accent2/20 to-accent2/0 -translate-x-full group-hover:translate-x-full duration-700 transition-transform"></div>
           </button>
 
