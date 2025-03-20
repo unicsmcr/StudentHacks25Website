@@ -1,7 +1,7 @@
 {
   "Directors": [
     { "name": "Shirin P.", "image": "images/TeamPhotos/ShirinPandey.jpeg", "role": "Co-Director", "LinkedIn": "https://www.linkedin.com/in/shirinpandey/", "GitHub": "https://github.com/Shirinpandey", "PersonalWebsite": "" },
-    { "name": "Nishanth T.", "image": "images/TeamPhotos/nish - Nishanth Abishek.png", "role": "Co-Director", "LinkedIn": "https://www.linkedin.com/in/nishanth-thangathurai/", "GitHub": "https://github.com/nishanth-abishek", "PersonalWebsite": "" },
+    { "name": "Nish T.", "image": "images/TeamPhotos/NishanthAbishek.png", "role": "Co-Director", "LinkedIn": "https://www.linkedin.com/in/nishanth-thangathurai/", "GitHub": "https://github.com/nishanth-abishek", "PersonalWebsite": "" },
     { "name": "Arpan P.", "image": "images/TeamPhotos/ArpanPandey.jpg", "role": "Dep. Director", "LinkedIn": "https://www.linkedin.com/in/arpan-pandey/", "GitHub": "https://github.com/arpan-206", "PersonalWebsite": "https://arpanpandey.dev/" }
   ],
   "Development": [
@@ -19,9 +19,9 @@
     { "name": "Palak S.", "image": "images/TeamPhotos/PalakSingh.jpg", "role": "Logistics", "LinkedIn": "https://www.linkedin.com/in/palak-singh-a9a367335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", "GitHub": "", "PersonalWebsite": "" },
     { "name": "Peter P.", "image": "images/TeamPhotos/PeterPrescod.jpeg", "role": "Logistics", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" },
     { "name": "Anahita K.", "image": "images/TeamPhotos/AnahitaKhurana.jpeg", "role": "Logistics", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" },
-    { "name": "Arjun Y.", "image": "images/TeamPhotos/arjun - Arjun Yadav.jpg", "role": "Logistics", "LinkedIn": "https://linkedin.com/in/y-arjun-y", "GitHub": "https://github.com/y-arjun-y", "PersonalWebsite": "https://arjunyadav.net" },
+    { "name": "Arjun Y.", "image": "images/TeamPhotos/ArjunYadav.jpg", "role": "Logistics", "LinkedIn": "https://linkedin.com/in/y-arjun-y", "GitHub": "https://github.com/y-arjun-y", "PersonalWebsite": "https://arjunyadav.net" },
     { "name": "Ayaan A.", "image": "images/TeamPhotos/placeholder.png", "role": "Logistics", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" },
-    { "name": "Sudhanshu Wani", "image": "images/TeamPhotos/IMG-20241122-WA0005 - Sudhanshu Wani.jpg", "role": "Logistics", "LinkedIn": "https://www.linkedin.com/in/sudhanshu-wani", "GitHub": "", "PersonalWebsite": "" }
+    { "name": "Sudhanshu W.", "image": "images/TeamPhotos/SudhanshuWani.jpg", "role": "Logistics", "LinkedIn": "https://www.linkedin.com/in/sudhanshu-wani", "GitHub": "", "PersonalWebsite": "" }
   ],
   "Sponsorships": [
     { "name": "Sahar R.", "image": "images/TeamPhotos/SaharErinRahman.png", "role": "Sponsors Lead", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" }
