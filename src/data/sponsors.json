@@ -3,7 +3,7 @@
       "id": 1,
       "name": "Ping Proxies",
       "code": "PPX-1234",
-      "logo": "/images/Sponsors/PingLogo.webp",
+      "logo": "/images/Sponsors/PingProxiesLogo.png",
       "link": "https://pingproxies.com/"
     },
     {
@@ -12,5 +12,12 @@
       "code": "PSG-5678",
       "logo": "/images/Sponsors/PortSwigger.png",
       "link": "https://portswigger.net/"
+    },
+    {
+        "id": 3,
+        "name": "Neuphonic",
+        "code": "NPH-9101",
+        "logo": "/images/Sponsors/NeuphonicLogo.png",
+        "link": "https://neuphonic.com/"
     }
 ]
