@@ -213,9 +213,9 @@ const Sponsors = () => {
                         <div className="mb-3">
                           {/* Logo rendering function - use the larger size as previously suggested */}
                           {sponsor.logo ? (
-                            <div className="w-xs h-28 flex items-center justify-center overflow-hidden relative">
+                            <div className="w-120 h-40 flex items-center justify-center overflow-hidden relative">
                               {/* Logo container with solid light background - wider */}
-                              <div className="relative z-10 w-60 h-20 flex items-center justify-center rounded-lg bg-gray-200/90">
+                              <div className="relative z-10 w-100 h-32 flex items-center justify-center rounded-lg bg-gray-100/90">
                                 <img 
                                   src={sponsor.logo} 
                                   alt={`${sponsor.name} logo`} 
