@@ -230,7 +230,7 @@ const Home = () => {
 
           <div className="flex gap-4 justify-center">
             <a
-              href="https://discord.gg/UXfP42SP"
+              href="https://discord.gg/xfUFzWrP"
               target="_blank"
               rel="noopener noreferrer"
               className="group"

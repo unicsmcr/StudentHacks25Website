@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
 
               <div className="flex gap-x-4 sm:self-auto mt-4 sm:mt-0">
-                <a href="https://discord.gg/UXfP42SP" target="_blank" rel="noopener noreferrer" className="group">
+                <a href="https://discord.gg/xfUFzWrP" target="_blank" rel="noopener noreferrer" className="group">
                   <FaDiscord className="text-gray-400 group-hover:text-primary transition-colors duration-300" size={20} />
                 </a>
                 <a href="https://www.instagram.com/unics_hackathons/" target="_blank" rel="noopener noreferrer" className="group">
