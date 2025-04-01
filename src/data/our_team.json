@@ -24,6 +24,8 @@
     { "name": "Sudhanshu W.", "image": "images/TeamPhotos/SudhanshuWani.jpg", "role": "Logistics", "LinkedIn": "https://www.linkedin.com/in/sudhanshu-wani", "GitHub": "", "PersonalWebsite": "" }
   ],
   "Sponsorships": [
-    { "name": "Sahar R.", "image": "images/TeamPhotos/SaharErinRahman.png", "role": "Sponsors Lead", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" }
+    { "name": "Sahar R.", "image": "images/TeamPhotos/SaharErinRahman.png", "role": "Sponsors Lead", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" },
+    { "name": "Na W.", "image": "images/TeamPhotos/NaWang.jpeg", "role": "Sponsors", "LinkedIn": "https://www.linkedin.com/in/nwng", "GitHub": "", "PersonalWebsite": "" },
+    { "name": "Krishnadeep", "image": "images/TeamPhotos/placeholder.png", "role": "Sponsors", "LinkedIn": "", "GitHub": "", "PersonalWebsite": "" }
   ]
 }
