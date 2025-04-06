@@ -4,29 +4,35 @@
         "date": "Saturday",
         "dayOfWeek": "5th April",
         "events": [
-          { "time": "09:00", "title": "Registration Opens", "description":"Don't forget your ID!" },
-          { "time": "10:00", "title": "Icebreaker" },
-          { "time": "10:30", "title": "Registration Closes" },
-          { "time": "11:00", "title": "Opening Ceremony" },
-          { "time": "12:00", "title": "Hacking Begins!", "description":"24 hours stars now..." },
-          { "time": "12:45", "title": "Lunch" },
-          { "time": "18:00", "title": "Dinner" },
-          { "time": "20:30", "title": "Movie Screening" }
+          { "time": "09:30", "title": "Registration Opens", "description":"Don't forget your ID!", "status":"completed" },
+          { "time": "10:00", "title": "Icebreaker", "description": "Human bingo...", "status":"completed" },
+          { "time": "11:00", "title": "Opening Ceremony", "status":"completed" },
+          { "time": "12:00", "title": "Registration Closes", "status":"completed" },
+          { "time": "12:00", "title": "Hacking Begins!", "description":"24 hours stars now...", "status": "completed" },
+          { "time": "12:30", "title": "Lunch", "description":"Subway platters...", "status":"completed" },
+          { "time": "13:30", "title": "Workshop 1 (PingProxies)", "status":"completed" },
+          { "time": "14:30", "title": "Workshop 2 (Google)", "status":"completed" },
+          { "time": "17:30", "title": "Cup Stacking", "status":"completed" },
+          { "time": "18:30", "title": "Dinner", "description":"Papa Johns...", "status":"completed" },
+          { "time": "22:00", "title": "Scavenger Hunt", "description":"Check the Discord, win $$$...", "status":"ongoing" },
+          { "time": "23:00", "title": "Minecraft", "status":"cancelled"}
         ]
       },
       {
         "date": "Sunday",
         "dayOfWeek": "6th April", 
         "events": [
-          { "time": "00:00", "title": "Midnight Snack" },
-          { "time": "07:30", "title": "Breakfast" },
+          { "time": "00:00", "title": "Midnight Snack", "description":"More pizza, energy drinks and more...", "status":"completed" },
+          { "time": "01:00", "title": "Movie Screening", "description":"Wall-E...", "status":"ongoing" },
+          { "time": "02:00", "title": "E-Sports", "status":"cancelled" },
+          { "time": "08:30", "title": "Breakfast", "description":"Morrisons..."},
           { "time": "10:00", "title": "Submission Opens" },
           { "time": "11:30", "title": "Submission Closes" },
           { "time": "12:00", "title": "Judging Begins!" },
-          { "time": "13:45", "title": "Lunch" },
-          { "time": "14:30", "title": "Project Showcase" },
-          { "time": "15:30", "title": "Closing Ceremony" },
-          { "time": "16:00", "title": "Event Ends" }
+          { "time": "12:00", "title": "Lunch", "description":"Greggs..." },
+          { "time": "15:30", "title": "Project Showcase" },
+          { "time": "16:30", "title": "Closing Ceremony" },
+          { "time": "17:00", "title": "Event Ends" }
         ]
       }
     ]
