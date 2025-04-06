@@ -27,7 +27,7 @@
           { "time": "02:00", "title": "E-Sports", "status":"cancelled" },
           { "time": "08:30", "title": "Breakfast", "description":"Morrisons..."},
           { "time": "10:00", "title": "Submission Opens" },
-          { "time": "11:30", "title": "Submission Closes" },
+          { "time": "12:00", "title": "Submission Closes" },
           { "time": "12:00", "title": "Judging Begins!" },
           { "time": "12:00", "title": "Lunch", "description":"Greggs..." },
           { "time": "15:30", "title": "Project Showcase" },
