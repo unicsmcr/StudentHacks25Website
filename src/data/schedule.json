@@ -14,7 +14,7 @@
           { "time": "14:30", "title": "Workshop 2 (Google)", "status":"completed" },
           { "time": "17:30", "title": "Cup Stacking", "status":"completed" },
           { "time": "18:30", "title": "Dinner", "description":"Papa Johns...", "status":"completed" },
-          { "time": "22:00", "title": "Scavenger Hunt", "description":"Check the Discord, win $$$...", "status":"ongoing" },
+          { "time": "22:00", "title": "Scavenger Hunt", "description":"Check the Discord, win $$$...", "status":"completed" },
           { "time": "23:00", "title": "Minecraft", "status":"cancelled"}
         ]
       },
@@ -23,10 +23,10 @@
         "dayOfWeek": "6th April", 
         "events": [
           { "time": "00:00", "title": "Midnight Snack", "description":"More pizza, energy drinks and more...", "status":"completed" },
-          { "time": "01:00", "title": "Movie Screening", "description":"Wall-E...", "status":"ongoing" },
+          { "time": "01:00", "title": "Movie Screening", "description":"Wall-E...", "status":"completed" },
           { "time": "02:00", "title": "E-Sports", "status":"cancelled" },
-          { "time": "08:30", "title": "Breakfast", "description":"Morrisons..."},
-          { "time": "10:00", "title": "Submission Opens" },
+          { "time": "08:30", "title": "Breakfast", "description":"Morrisons...", "status":"ongoing"},
+          { "time": "11:00", "title": "Submission Opens" },
           { "time": "12:00", "title": "Submission Closes" },
           { "time": "12:00", "title": "Judging Begins!" },
           { "time": "12:00", "title": "Lunch", "description":"Greggs..." },
