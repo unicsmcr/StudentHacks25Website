@@ -173,46 +173,12 @@ const Home = () => {
               className={`p-4 bg-black/80 border-t border-primary/30 transition-all duration-700 transform ${countdownVisible ? "opacity-100" : "opacity-0"}`}
             >
               <div className="text-center">
-                <div className="text-xs text-primary/70 font-mono mb-2">
+                {/* <div className="text-xs text-primary/70 font-mono mb-2">
                   TIME UNTIL LAUNCH:
-                </div>
-
+                </div> */}
+                <h1 className=" text-3xl font-bold text-green-400 gap-x-5">THE HACKATHON HAS ENDED!</h1>
                 <div className="flex justify-center gap-px">
-                  {timeUnits.map((unit, index) => (
-                    <div
-                      key={unit.label}
-                      className={`group relative overflow-hidden transition-all duration-500 transform
-                                ${countdownVisible ? `translate-y-0 opacity-100 delay-${index * 200}` : "translate-y-4 opacity-0"}`}
-                    >
-                      <div className="bg-primary/10 border border-primary/40 backdrop-blur-sm rounded-sm p-3 min-w-16 md:min-w-20 flex flex-col justify-center relative z-10 group-hover:bg-primary/20 transition-colors duration-300">
-                        {/* Number display with matrix effect */}
-                        <div className="relative h-10 overflow-hidden flex items-center justify-center">
-                          <span className="text-gray-300 font-title text-3xl font-bold z-10">
-                            {String(unit.value).padStart(2, "0")}
-                          </span>
-                          <div className="absolute inset-0 opacity-10 animate-pulse flex items-center justify-center">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <div
-                                key={i}
-                                className="text-primary/30 text-3xl absolute"
-                                style={{
-                                  opacity: (5 - i) / 10,
-                                  transform: `translateY(${(i - 2) * 20}%)`,
-                                }}
-                              >
-                                {String(
-                                  Math.floor(Math.random() * 10),
-                                ).padStart(2, "0")}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <span className="text-accent2/80 text-xs tracking-wide font-mono mt-1">
-                          {unit.label}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                 
                 </div>
               </div>
             </div>
@@ -223,10 +189,10 @@ const Home = () => {
           className="space-y-6 transition-all duration-700 delay-1000 opacity-0 data-[visible=true]:opacity-100"
           data-visible={countdownVisible}
         >
-          <button className="mt-6 bg-transparent backdrop-blur-sm border-2 border-accent2/50 text-accent2 py-2 px-6 rounded-full hover:bg-accent2/10 transition duration-300 relative group overflow-hidden">
-            <span className="relative z-10 text-xl font-title font-bold">APPLICATIONS CLOSED</span>
+          <div className="mt-6   text-accent2 py-2 px-6 rounded-full">
+            <span className="relative z-10 text-2xl font-title font-bold">THANK YOU FOR YOUR PARTICIPATION!</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent2/0 via-accent2/20 to-accent2/0 -translate-x-full group-hover:translate-x-full duration-700 transition-transform"></div>
-          </button>
+          </div>
 
           <div className="flex gap-4 justify-center">
             <a
@@ -276,3 +242,40 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// {timeUnits.map((unit, index) => (
+//   <div
+//     key={unit.label}
+//     className={`group relative overflow-hidden transition-all duration-500 transform
+//               ${countdownVisible ? `translate-y-0 opacity-100 delay-${index * 200}` : "translate-y-4 opacity-0"}`}
+//   >
+//     <div className="bg-primary/10 border border-primary/40 backdrop-blur-sm rounded-sm p-3 min-w-16 md:min-w-20 flex flex-col justify-center relative z-10 group-hover:bg-primary/20 transition-colors duration-300">
+//       {/* Number display with matrix effect */}
+//       <div className="relative h-10 overflow-hidden flex items-center justify-center">
+//         <span className="text-gray-300 font-title text-3xl font-bold z-10">
+//           {String(unit.value).padStart(2, "0")}
+//         </span>
+//         <div className="absolute inset-0 opacity-10 animate-pulse flex items-center justify-center">
+//           {Array.from({ length: 5 }).map((_, i) => (
+//             <div
+//               key={i}
+//               className="text-primary/30 text-3xl absolute"
+//               style={{
+//                 opacity: (5 - i) / 10,
+//                 transform: `translateY(${(i - 2) * 20}%)`,
+//               }}
+//             >
+//               {String(
+//                 Math.floor(Math.random() * 10),
+//               ).padStart(2, "0")}
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       <span className="text-accent2/80 text-xs tracking-wide font-mono mt-1">
+//         {unit.label}
+//       </span>
+//     </div>
+//   </div>
+// ))}

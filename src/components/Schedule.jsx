@@ -139,12 +139,12 @@ const Schedule = () => {
               Our hackathons aren't just 24 hours of straight coding - there'll be many workshops, mini-games and events for everyone to have fun and learn!
             </p>
             {/* Disclaimer Banner */}
-            <div className="bg-yellow-500/20 border border-yellow-500/50 rounded-md py-2 px-3 mb-6 mx-auto max-w-4xl">
+            {/* <div className="bg-yellow-500/20 border border-yellow-500/50 rounded-md py-2 px-3 mb-6 mx-auto max-w-4xl">
               <p className="text-yellow-400 font-mono text-xs sm:text-sm flex items-center justify-center">
                 <span className="mr-2">⚠️</span>
                 <span className="uppercase font-bold mr-1">NOTICE:</span> This schedule is provisional and subject to change. Final schedule will be updated soon.
               </p>
-            </div>
+            </div> */}
             <div className="text-xs tracking-widest text-accent2 uppercase mb-2">UNICS NETWORK • Data: 30.02.2184</div>
           </div>
           <p className="text-accent2/70 text-sm tracking-widest uppercase mb-4">
@@ -180,9 +180,9 @@ const Schedule = () => {
                   <div className="text-yellow-400 mb-3">
                     [EVENT-SCHEDULE DATABASE] - RECORDS FOUND: {scheduleData.days.length}
                   </div>
-                  <div className="text-red-400 mb-3">
+                  {/* <div className="text-red-400 mb-3">
                     [SYSTEM_MSG] PROVISIONAL DATA - SUBJECT TO CHANGE
-                  </div>
+                  </div> */}
                   
                   {/* Loading animation for terminal outputs */}
                   {!terminalReady && (
