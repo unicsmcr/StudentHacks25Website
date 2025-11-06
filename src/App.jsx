@@ -15,6 +15,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
+  // greatunihack redirection fix. 
+  window.location.replace("https://greatunihack.com");
+
   const [init, setInit] = useState(false);
 
   useEffect(() => {
